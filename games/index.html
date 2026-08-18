@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Games | DoubleUp Studio</title>
+  <meta name="description" content="DoubleUp Studio가 만드는 하이퍼캐주얼 모바일 게임 목록. 첫 타이틀 소르티니(Sortini)를 개발 중입니다." />
+  <link rel="canonical" href="https://doubleupstudio.com/games/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DoubleUp Studio" />
+  <meta property="og:url" content="https://doubleupstudio.com/games/" />
+  <meta property="og:title" content="Games | DoubleUp Studio" />
+  <meta property="og:description" content="DoubleUp Studio가 만드는 하이퍼캐주얼 모바일 게임 목록." />
+  <meta property="og:image" content="https://doubleupstudio.com/doubleupstudio_logo_02.png" />
+  <meta property="og:image:width" content="1536" />
+  <meta property="og:image:height" content="1024" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0a0c12" />
+
+  <link rel="icon" type="image/png" href="/assets/img/favicon-64.png" />
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+
+  <!-- ============================== header ============================== -->
+  <header class="site-header">
+    <div class="wrap">
+      <div class="site-header__bar">
+        <a class="brand" href="/">
+          <img src="/assets/img/logo-mark.png" alt="" width="32" height="32" />
+          <span>DoubleUp Studio</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">MENU</button>
+      </div>
+      <nav class="site-nav" id="site-nav" data-open="false" aria-label="주 메뉴">
+        <ul>
+          <li><a href="/">홈</a></li>
+          <li><a href="/games/" aria-current="page">Games</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================== page hero ============================== -->
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="eyebrow">Games</p>
+        <h1>게임 목록</h1>
+        <p class="lead">
+          짧게 즐기고 가볍게 끄는 하이퍼캐주얼 게임을 만듭니다.
+          출시 전 타이틀도 진행 상황이 보이도록 함께 올려둡니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================== game list ============================== -->
+    <section class="section">
+      <div class="wrap">
+        <div class="grid cols-3">
+
+          <!-- ================================================================
+               game:sortini
+               출시 후 할 일:
+                 1) .game-card__art 를 <img src="/assets/img/games/sortini-cover.png"> 로 교체
+                 2) tag--amber "개발 중" → tag--lime "출시됨" 으로 변경
+                 3) 아래 .btn-row 주석을 해제하고 스토어 링크 채우기
+               ================================================================ -->
+          <article class="game-card">
+            <div class="game-card__art" aria-hidden="true">SCREENSHOT<br />COMING SOON</div>
+            <div class="tag-row">
+              <span class="tag tag--amber">개발 중</span>
+              <span class="tag">퍼즐</span>
+              <span class="tag">싱글플레이</span>
+            </div>
+            <h3 class="game-card__title">소르티니 (Sortini)</h3>
+            <p class="muted">
+              같은 색 공을 하나의 튜브에 모으는 정리 퍼즐입니다.
+              규칙은 3초면 이해되고 한 판은 1분이면 끝나지만,
+              뒤로 갈수록 한 수 앞을 더 보게 만드는 난이도 곡선을 설계하고 있습니다.
+            </p>
+            <ul class="game-card__meta">
+              <li><b>플랫폼</b><span>Android · iOS</span></li>
+              <li><b>엔진</b><span>Unity</span></li>
+              <li><b>가격</b><span>무료</span></li>
+              <li><b>출시</b><span>미정</span></li>
+            </ul>
+            <!--
+            <div class="btn-row">
+              <a class="btn" href="STORE_URL_GOOGLE_PLAY">Google Play</a>
+              <a class="btn" href="STORE_URL_APP_STORE">App Store</a>
+            </div>
+            -->
+          </article>
+
+          <!-- 새 게임을 추가할 때는 위 <article class="game-card"> 블록을 복사해서 쓰세요. -->
+
+          <article class="game-card game-card--empty">
+            <p class="arcade" style="font-size:.7rem">SLOT 02</p>
+            <p class="mb-0">다음 프로젝트 자리</p>
+          </article>
+
+          <article class="game-card game-card--empty">
+            <p class="arcade" style="font-size:.7rem">SLOT 03</p>
+            <p class="mb-0">다음 프로젝트 자리</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== notify ============================== -->
+    <section class="section">
+      <div class="wrap">
+        <div class="panel panel--sky">
+          <h2>출시 소식이 궁금하다면</h2>
+          <p class="lead">
+            첫 타이틀이 스토어에 올라가는 날, 이 페이지가 가장 먼저 업데이트됩니다.
+            미리 알림을 받고 싶다면 메일 한 통이면 충분합니다.
+          </p>
+          <div class="btn-row mt-2">
+            <a class="btn btn--solid" href="mailto:contact@doubleupstudio.com?subject=%5BDoubleUp%20Studio%5D%20%EC%B6%9C%EC%8B%9C%20%EC%86%8C%EC%8B%9D%20%EC%95%8C%EB%A6%BC%20%EC%8B%A0%EC%B2%AD">출시 알림 신청</a>
+            <a class="btn btn--ghost" href="/contact/">다른 문의하기</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== footer ============================== -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="site-footer__grid">
+        <div>
+          <a class="brand" href="/">
+            <img src="/assets/img/logo-mark.png" alt="" width="26" height="26" />
+            <span>DoubleUp Studio</span>
+          </a>
+          <p style="margin-top:.75rem">
+            가볍게 시작해서, 재미는 두배로.<br />
+            1인 개발 바이브코딩 하이퍼캐주얼 스튜디오.
+          </p>
+        </div>
+        <div>
+          <h4 class="pixel">Site</h4>
+          <ul>
+            <li><a href="/">홈</a></li>
+            <li><a href="/games/">Games</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="pixel">Legal</h4>
+          <ul>
+            <li><a href="/privacy/">개인정보처리방침</a></li>
+            <li><a href="/privacy/en/">Privacy Policy (EN)</a></li>
+            <li><a href="mailto:contact@doubleupstudio.com">contact@doubleupstudio.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__legal">
+        <span>&copy; <span data-year>2026</span> DoubleUp Studio. All rights reserved.</span>
+        <span class="arcade" style="font-size:.6rem">DOUBLEUPSTUDIO.COM</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>
