@@ -30,7 +30,15 @@
 
 <!--
   ===========================================================================
-  MAINTENANCE NOTE (v1.1, 2026-08-19: AdMob + Firebase Analytics/Crashlytics applied)
+  MAINTENANCE NOTE (v1.2, 2026-08-20: in-app purchases (ad removal) applied)
+                   (v1.1, 2026-08-19: AdMob + Firebase Analytics/Crashlytics applied)
+
+  WARNING - next required revision: Google Play Games Services (GPGS)
+    [S2.1] and the summary currently state there is no sign-up, login, or social sign-in.
+    Adding Google account sign-in and leaderboards makes that false and puts the policy out
+    of sync with the Data Safety form - the same trap the v1.0 "no ads" claim caused.
+    Update together: [S2.1] login wording, the summary, a GPGS row in [S4],
+    leaderboard score retention in [S9], and account-unlink steps in [S12] if needed.
   ---------------------------------------------------------------------------
   When the SDK line-up changes next:
     - Mediation / Unity Ads etc. added  -> add rows to the [S4] table
@@ -92,9 +100,9 @@
         <article class="doc">
 
           <div class="doc-meta">
-            <span><b>Effective</b> 19 August 2026</span>
-            <span><b>Last updated</b> 19 August 2026</span>
-            <span><b>Version</b> 1.1</span>
+            <span><b>Effective</b> 20 August 2026</span>
+            <span><b>Last updated</b> 20 August 2026</span>
+            <span><b>Version</b> 1.2</span>
           </div>
 
           <div class="note note--sky">
@@ -189,7 +197,22 @@
             for details.
           </p>
 
-          <h3>2.3 Website usage</h3>
+          <h3>2.3 In-app purchases</h3>
+          <p>
+            Our games may offer paid items such as <strong>ad removal</strong>. Payment is
+            <strong>handled directly by Google Play or the App Store</strong>; we do not collect or
+            store payment method details such as card or bank account numbers.
+          </p>
+          <p>
+            We only <strong>check the store-issued purchase receipt to confirm whether a purchase
+            exists</strong> and then apply the corresponding feature (for example, removing ads).
+            That state is stored on your device. If you change devices or reinstall the game, the
+            <em>Restore Purchases</em> option in the settings screen works by re-reading the receipts
+            of the store account you are signed in to. We do not access or retain your store account
+            details in this process.
+          </p>
+
+          <h3>2.4 Website usage</h3>
           <p>
             doubleupstudio.com is a static site served by GitHub Pages. We set no cookies and run no
             visitor-tracking tools. Our hosting provider (GitHub, Inc.) and the web-font providers
@@ -249,6 +272,12 @@
                   <td>Crash diagnostics</td>
                   <td>Crash stack traces, device state at the time of the error, Crashlytics installation identifier</td>
                   <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">View</a></td>
+                </tr>
+                <tr>
+                  <td>Google Play Billing (Google LLC)</td>
+                  <td>Processing in-app purchases and restoring purchases</td>
+                  <td>Purchase receipts, purchase history, payment method details (handled directly by Google; we never receive payment method details)</td>
+                  <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">View</a></td>
                 </tr>
                 <tr>
                   <td>Google LLC</td>
@@ -398,6 +427,12 @@
               retention periods follow Google's and Firebase's policies and our retention settings.
               We only see this data in aggregated, statistical form.
             </li>
+            <li>
+              <strong>Purchase records</strong> — payments and receipts are retained by Google Play
+              and the App Store under their own policies. We store only whether a purchase exists
+              (the ad-removal entitlement) on your device, and that record is deleted when you
+              uninstall the game.
+            </li>
           </ul>
 
           <!-- ================= S10. International Transfers ================= -->
@@ -495,6 +530,11 @@
                 </tr>
               </thead>
               <tbody>
+                <tr>
+                  <td>1.2</td>
+                  <td>2026-08-20</td>
+                  <td>Revised for the introduction of in-app purchases (ad removal) — added disclosure of store-handled payment, receipt-based verification, how Restore Purchases works, and who retains purchase records [S2.3 / S4 / S9]</td>
+                </tr>
                 <tr>
                   <td>1.1</td>
                   <td>2026-08-19</td>
