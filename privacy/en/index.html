@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy | DoubleUp Studio</title>
-  <meta name="description" content="Privacy policy for DoubleUp Studio mobile games. We use Google AdMob advertising and Firebase Analytics/Crashlytics." />
+  <meta name="description" content="Privacy policy for DoubleUp Studio mobile games. We use Google AdMob advertising, Firebase Analytics/Crashlytics, and Google Play Games Services (leaderboards)." />
   <link rel="canonical" href="https://doubleupstudio.com/privacy/en/" />
   <link rel="alternate" hreflang="ko" href="https://doubleupstudio.com/privacy/" />
   <link rel="alternate" hreflang="en" href="https://doubleupstudio.com/privacy/en/" />
@@ -30,15 +30,13 @@
 
 <!--
   ===========================================================================
-  MAINTENANCE NOTE (v1.2, 2026-08-20: in-app purchases (ad removal) applied)
+  MAINTENANCE NOTE (v1.3, 2026-09-01: Google Play Games Services sign-in + leaderboard applied)
+                   (v1.2, 2026-08-20: in-app purchases (ad removal) applied)
                    (v1.1, 2026-08-19: AdMob + Firebase Analytics/Crashlytics applied)
 
-  WARNING - next required revision: Google Play Games Services (GPGS)
-    [S2.1] and the summary currently state there is no sign-up, login, or social sign-in.
-    Adding Google account sign-in and leaderboards makes that false and puts the policy out
-    of sync with the Data Safety form - the same trap the v1.0 "no ads" claim caused.
-    Update together: [S2.1] login wording, the summary, a GPGS row in [S4],
-    leaderboard score retention in [S9], and account-unlink steps in [S12] if needed.
+  Updated in v1.3: summary, [S2.1] optional GPGS sign-in wording, [S2.2] leaderboard score
+    transmission exception, [S3] purposes, GPGS row in [S4], leaderboard score retention
+    in [S9], and account-unlink / data-deletion steps in [S12.4].
   ---------------------------------------------------------------------------
   When the SDK line-up changes next:
     - Mediation / Unity Ads etc. added  -> add rows to the [S4] table
@@ -100,16 +98,18 @@
         <article class="doc">
 
           <div class="doc-meta">
-            <span><b>Effective</b> 20 August 2026</span>
-            <span><b>Last updated</b> 20 August 2026</span>
-            <span><b>Version</b> 1.2</span>
+            <span><b>Effective</b> 1 September 2026</span>
+            <span><b>Last updated</b> 1 September 2026</span>
+            <span><b>Version</b> 1.3</span>
           </div>
 
           <div class="note note--sky">
             <strong>Summary.</strong> DoubleUp Studio games are free to play and are funded by
             Google AdMob advertising; we also use Firebase Analytics and Crashlytics to improve
-            stability and gameplay. There is no sign-up or login, and game progress is stored only
-            on your device. Advertising identifiers and device information may be transmitted to
+            stability and gameplay. There is no separate sign-up; you may optionally sign in with
+            <strong>Google Play Games</strong> to use leaderboards. Game progress is stored only
+            on your device, and if you sign in, only your leaderboard score is stored with Google.
+            Advertising identifiers and device information may be transmitted to
             Google as described below. This summary is for convenience; the sections below are the
             operative text.
           </div>
@@ -163,9 +163,16 @@
 
           <h3>2.1 Information you provide directly</h3>
           <p>
-            Our games have no account registration, login, or social sign-in. We therefore do not
-            collect names, dates of birth, phone numbers, addresses, or account credentials inside
-            the game.
+            Our games have no separate account registration, and we do not directly collect names,
+            dates of birth, phone numbers, or addresses inside the game.
+          </p>
+          <p>
+            You may optionally sign in with <strong>Google Play Games</strong> to use the
+            leaderboard. Signing in is <strong>optional</strong>; everything except the leaderboard
+            works without it. When you sign in, the gamer profile that Google Play Games Services
+            derives from your Google account — <strong>player ID, gamer nickname, and
+            avatar</strong> — is linked to the game. We do not receive your Google account email
+            address or real name.
           </p>
           <p>
             If you contact us by email, we receive your <strong>email address and the content of
@@ -179,6 +186,12 @@
             storage <strong>on your device only</strong> through Unity's local save facilities.
             It is not transmitted to our servers or to any third party. Uninstalling the game
             deletes this data.
+          </p>
+          <p>
+            As an exception, if you are signed in to Google Play Games, your <strong>leaderboard
+            score (highest level reached and cumulative clear time)</strong> is transmitted to and
+            stored by Google Play Games Services for ranking, and may be shown to other players in
+            ranked form together with your gamer nickname and avatar.
           </p>
           <p>
             Our games include the <strong>Google AdMob</strong> SDK for advertising and the
@@ -225,6 +238,7 @@
           <p>We use information only for the following purposes:</p>
           <ul>
             <li>Providing game functionality and saving progress (processed on your device)</li>
+            <li>Providing leaderboard rankings (Google Play Games Services — signed-in users only)</li>
             <li>Serving advertising and measuring its performance (Google AdMob)</li>
             <li>Diagnosing crashes and improving stability (Firebase Crashlytics)</li>
             <li>Analysing usage statistics to improve gameplay (Firebase Analytics)</li>
@@ -272,6 +286,12 @@
                   <td>Crash diagnostics</td>
                   <td>Crash stack traces, device state at the time of the error, Crashlytics installation identifier</td>
                   <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">View</a></td>
+                </tr>
+                <tr>
+                  <td>Google Play Games Services (Google LLC)</td>
+                  <td>Game sign-in and leaderboards</td>
+                  <td>Gamer profile (player ID, nickname, avatar), leaderboard score (highest level, cumulative clear time)</td>
+                  <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">View</a></td>
                 </tr>
                 <tr>
                   <td>Google Play Billing (Google LLC)</td>
@@ -418,6 +438,11 @@
               the game. We do not retain it.
             </li>
             <li>
+              <strong>Leaderboard scores</strong> — retained by Google Play Games Services
+              (Google LLC). Your score may remain after you uninstall the game; to delete it,
+              use the Play Games profile data deletion steps in Section 12.4.
+            </li>
+            <li>
               <strong>Enquiry emails</strong> — kept for up to one year after the enquiry is
               resolved, then deleted. Where law requires longer retention (for example, to handle a
               dispute), we keep them for that period.
@@ -494,6 +519,24 @@
             Agency's Privacy Infringement Report Center (privacy.kisa.or.kr, 118).
           </p>
 
+          <h3>12.4 Unlinking Google Play Games and deleting its data</h3>
+          <p>
+            You can manage the Google Play Games sign-in and your leaderboard data as follows:
+          </p>
+          <ul>
+            <li>
+              <strong>Unlink</strong> — on your device, go to <em>Settings &gt; Google &gt; All
+              services &gt; Play Games</em> (or the settings inside the Play Games app) and remove
+              the game's account connection.
+            </li>
+            <li>
+              <strong>Delete data</strong> — in the Play Games settings, use <em>Delete Play Games
+              account &amp; data</em> to ask Google to delete data for an individual game or your
+              entire gamer profile. Scores posted to the leaderboard are deleted through this
+              process as well.
+            </li>
+          </ul>
+
           <!-- ================= S13. Changes ================= -->
           <h2 id="s13">13. Changes to This Policy</h2>
           <p>
@@ -530,6 +573,11 @@
                 </tr>
               </thead>
               <tbody>
+                <tr>
+                  <td>1.3</td>
+                  <td>2026-09-01</td>
+                  <td>Revised for the introduction of Google Play Games Services — added disclosure of optional sign-in, gamer profile processing, leaderboard score (highest level, cumulative clear time) transmission and retention, and unlink/data-deletion steps [Summary / S2.1 / S2.2 / S3 / S4 / S9 / S12.4]</td>
+                </tr>
                 <tr>
                   <td>1.2</td>
                   <td>2026-08-20</td>
