@@ -602,10 +602,12 @@
     if (ui.content) ui.content.scrollIntoView({ behavior: 'smooth' });
   }
 
-  function pauseGame() {
+  // silent = no overlay (used when the visitor scrolls the stage away; the
+  // stage is leaving the viewport so an overlay there would be off-screen)
+  function pauseGame(silent) {
     if (state !== 'playing') return;
     state = 'paused';
-    ui.pause.hidden = false;
+    ui.pause.hidden = !!silent;
     if (actx && actx.state === 'running') actx.suspend();
   }
   function resumeGame() {
@@ -723,7 +725,7 @@
     scrollOK = p < 0.12;
     if (state === 'playing' && p >= 0.12) {
       scrollPaused = true;
-      pauseGame();
+      pauseGame(true);
     } else if (scrollPaused && p < 0.04) {
       scrollPaused = false;
       resumeGame();
