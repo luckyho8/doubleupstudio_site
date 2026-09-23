@@ -585,6 +585,7 @@
 
   function toAttract() {
     state = 'attract';
+    scrollPaused = false;
     stage.dataset.state = 'attract';
     unlockTouch();
     ui.hud.hidden = true;
@@ -605,6 +606,7 @@
     if (state !== 'playing') return;
     state = 'paused';
     ui.pause.hidden = false;
+    if (actx && actx.state === 'running') actx.suspend();
   }
   function resumeGame() {
     if (state !== 'paused') return;
@@ -693,7 +695,7 @@
   // Reads native scroll; never intercepts it. Maps progress to the stage
   // transform with a plateau in the middle (the "pause halfway" the design
   // asks for), and freezes/parks the game as the visitor leaves.
-  var scrollProgress = 0, trackSpan = 1, dirty = true;
+  var scrollProgress = 0, trackSpan = 1, dirty = true, scrollPaused = false;
 
   function measureTrack() {
     trackSpan = Math.max(1, track.offsetHeight - stage.offsetHeight);
@@ -716,7 +718,16 @@
     if (p > 0.25 && p < 0.75) dim = 1 - Math.abs(p - 0.5) / 0.25;
     ui.dim.style.opacity = dim.toFixed(2);
 
-    scrollOK = p < 0.85;
+    // Scrolling away = hands off the game: freeze the loop (and audio) as
+    // soon as the stage starts leaving; auto-resume when back at the top.
+    scrollOK = p < 0.12;
+    if (state === 'playing' && p >= 0.12) {
+      scrollPaused = true;
+      pauseGame();
+    } else if (scrollPaused && p < 0.04) {
+      scrollPaused = false;
+      resumeGame();
+    }
     syncRunning();
   }
 
