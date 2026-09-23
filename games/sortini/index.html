@@ -52,35 +52,32 @@
   <main id="main">
     <!-- ============================== banner + title ============================== -->
     <section class="page-hero">
-      <div class="wrap">
-        <img class="game-page__banner" src="/assets/img/games/sortini-banner.webp"
-             alt="소르티니 (Sortini) 키 아트 — 색색의 공이 담긴 튜브 세 개와 SORTINI 로고" fetchpriority="high" />
-        <div class="tag-row" style="margin-top:1.5rem">
-          <span class="tag tag--amber">개발 중 · 비공개 테스트</span>
-          <span class="tag">퍼즐</span>
-          <span class="tag">싱글플레이</span>
-          <span class="tag">무료</span>
+      <div class="wrap game-hero">
+        <div class="game-hero__info">
+          <img class="game-page__banner" src="/assets/img/games/sortini-banner.webp"
+               alt="소르티니 (Sortini) 키 아트 — 색색의 공이 담긴 튜브 세 개와 SORTINI 로고"
+               width="1024" height="500" fetchpriority="high" />
+          <div class="tag-row" style="margin-top:1.5rem">
+            <span class="tag tag--amber">개발 중 · 비공개 테스트</span>
+            <span class="tag">퍼즐</span>
+            <span class="tag">싱글플레이</span>
+            <span class="tag">무료</span>
+          </div>
+          <h1 style="margin-top:.85rem">소르티니 (Sortini)</h1>
+          <p class="lead">같은 색 공을 하나의 튜브에 모으는 정리 퍼즐. 규칙은 3초, 한 판은 1분.</p>
         </div>
-        <h1 style="margin-top:.85rem">소르티니 (Sortini)</h1>
-        <p class="lead">같은 색 공을 하나의 튜브에 모으는 정리 퍼즐. 규칙은 3초, 한 판은 1분.</p>
-      </div>
-    </section>
 
-    <!-- ============================== trailer ============================== -->
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head">
+        <!-- 쇼츠(세로) 트레일러 — 무음 자동재생·반복, 소리는 플레이어에서 켤 수 있음 -->
+        <div class="game-hero__video">
           <p class="eyebrow">Trailer</p>
-          <h2>트레일러</h2>
-        </div>
-        <div class="video-embed">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/04UIN1jTS1M"
-            title="소르티니 (Sortini) 트레일러"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen></iframe>
+          <div class="video-embed video-embed--shorts">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/04UIN1jTS1M?autoplay=1&mute=1&loop=1&playlist=04UIN1jTS1M&playsinline=1&rel=0&modestbranding=1"
+              title="소르티니 (Sortini) 트레일러"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
+          </div>
         </div>
       </div>
     </section>

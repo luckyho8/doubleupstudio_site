@@ -452,6 +452,22 @@ main { flex: 1 0 auto; }
   background: #000;
 }
 .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* hero: banner + copy on the left, vertical Shorts player on the right;
+   stacks on phones */
+.game-hero { display: grid; gap: clamp(1.5rem, 4vw, 2.5rem); align-items: center; }
+.game-hero__info .game-page__banner { max-width: 640px; }
+.video-embed--shorts {
+  aspect-ratio: 9 / 16;
+  width: 100%;
+  max-width: 300px;
+  margin-inline: auto;
+}
+@media (min-width: 860px) {
+  .game-hero { grid-template-columns: minmax(0, 1fr) 320px; }
+  .game-hero__video { justify-self: end; width: 100%; }
+  .video-embed--shorts { max-width: 320px; margin-inline: 0; }
+}
 .shots { display: grid; gap: var(--gap); grid-template-columns: repeat(2, 1fr); }
 @media (min-width: 620px) { .shots { grid-template-columns: repeat(3, 1fr); } }
 @media (min-width: 860px) { .shots { grid-template-columns: repeat(4, 1fr); } }
