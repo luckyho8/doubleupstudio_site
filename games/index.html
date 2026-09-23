@@ -72,14 +72,14 @@
         <div class="grid cols-3">
 
           <!-- ================================================================
-               game:sortini
+               game:sortini  — 카드 클릭 → /games/sortini/ 소개 페이지
                출시 후 할 일:
-                 1) .game-card__art 를 <img src="/assets/img/games/sortini-cover.png"> 로 교체
-                 2) tag--amber "개발 중" → tag--lime "출시됨" 으로 변경
-                 3) 아래 .btn-row 주석을 해제하고 스토어 링크 채우기
+                 1) tag--amber "개발 중" → tag--lime "출시됨" 으로 변경
+                 2) /games/sortini/index.html 의 Google Play 버튼 활성화
                ================================================================ -->
-          <article class="game-card">
-            <div class="game-card__art" aria-hidden="true">SCREENSHOT<br />COMING SOON</div>
+          <a class="game-card game-card--link" href="/games/sortini/">
+            <img class="game-card__art game-card__art--img" src="/assets/img/games/sortini-banner.webp"
+                 alt="소르티니 (Sortini) 배너" loading="lazy" />
             <div class="tag-row">
               <span class="tag tag--amber">개발 중</span>
               <span class="tag">퍼즐</span>
@@ -95,17 +95,12 @@
               <li><b>플랫폼</b><span>Android · iOS</span></li>
               <li><b>엔진</b><span>Unity</span></li>
               <li><b>가격</b><span>무료</span></li>
-              <li><b>출시</b><span>미정</span></li>
+              <li><b>버전</b><span>v0.6.0 — 현재 350스테이지 제공 중, 3,000스테이지까지 순차 확장 예정</span></li>
+              <li><b>출시</b><span>비공개 테스트 중</span></li>
             </ul>
-            <!--
-            <div class="btn-row">
-              <a class="btn" href="STORE_URL_GOOGLE_PLAY">Google Play</a>
-              <a class="btn" href="STORE_URL_APP_STORE">App Store</a>
-            </div>
-            -->
-          </article>
+          </a>
 
-          <!-- 새 게임을 추가할 때는 위 <article class="game-card"> 블록을 복사해서 쓰세요. -->
+          <!-- 새 게임을 추가할 때는 위 .game-card 블록을 복사해서 쓰세요. -->
 
           <!-- ================================================================
                game:mazehold
