@@ -488,6 +488,48 @@ main { flex: 1 0 auto; }
   text-align: center;
   padding: 1rem;
 }
+/* KO | EN switch — links to the other language URL (no JS swap) */
+.lang-switch { display: inline-flex; border: 2px solid var(--line); }
+.lang-switch a, .lang-switch span {
+  font-family: var(--font-pixel);
+  font-weight: 700;
+  font-size: .82rem;
+  line-height: 1;
+  padding: .5rem .75rem;
+  text-decoration: none;
+  color: var(--ink-dim);
+}
+.lang-switch a:hover { color: var(--ink); background: rgba(255, 255, 255, .04); }
+.lang-switch [aria-current="true"] { color: #04121c; background: var(--sky); }
+
+/* store row: official Google Play badge + "coming soon" App Store chip */
+.store-row { display: flex; flex-wrap: wrap; align-items: center; gap: .85rem; margin-top: 1.25rem; }
+.store-badge { display: inline-block; line-height: 0; }
+.store-badge img { height: 56px; width: auto; }
+.store-badge:hover img { filter: brightness(1.12); }
+.store-soon {
+  display: inline-flex;
+  align-items: center;
+  height: 56px;
+  padding: 0 1.1rem;
+  border: 2px dashed var(--line);
+  color: var(--ink-dim);
+  font-family: var(--font-pixel);
+  font-weight: 700;
+  font-size: .9rem;
+}
+.release-date { font-family: var(--font-arcade); font-size: .6rem; letter-spacing: .1em; color: var(--ink-dim); margin-top: .9rem; }
+
+.feature-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--gap); }
+@media (min-width: 620px) { .feature-list { grid-template-columns: repeat(2, 1fr); } }
+.feature-list li {
+  border: 2px solid var(--line);
+  background: var(--bg-panel);
+  padding: 1rem 1.15rem;
+  color: var(--ink-mid);
+}
+.feature-list strong { display: block; color: var(--ink); font-family: var(--font-pixel); margin-bottom: .25rem; }
+
 .btn--disabled {
   border-color: var(--line);
   background: transparent;

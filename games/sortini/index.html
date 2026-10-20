@@ -3,16 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>소르티니 (Sortini) | DoubleUp Studio</title>
-  <meta name="description" content="같은 색 공을 하나의 튜브에 모으는 정리 퍼즐, 소르티니(Sortini). 트레일러, 게임 소개, 업데이트 내역. 현재 Google Play 비공개 테스트 진행 중." />
+  <title>Sortini: 볼 소트 퍼즐 | DoubleUp Studio</title>
+  <meta name="description" content="튜브 크기가 제각각인 볼 소트 퍼즐, Sortini 1.0 정식 출시. 1,000개 레벨, 크라운 챌린지, 리더보드. Google Play에서 무료로 받으세요." />
   <link rel="canonical" href="https://doubleupstudio.com/games/sortini/" />
+  <link rel="alternate" hreflang="ko" href="https://doubleupstudio.com/games/sortini/" />
+  <link rel="alternate" hreflang="en" href="https://doubleupstudio.com/games/sortini/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://doubleupstudio.com/games/sortini/en/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="DoubleUp Studio" />
   <meta property="og:url" content="https://doubleupstudio.com/games/sortini/" />
-  <meta property="og:title" content="소르티니 (Sortini) | DoubleUp Studio" />
-  <meta property="og:description" content="같은 색 공을 하나의 튜브에 모으는 정리 퍼즐. 규칙은 3초, 한 판은 1분." />
-  <meta property="og:image" content="https://doubleupstudio.com/assets/img/games/sortini-banner.webp" />
+  <meta property="og:title" content="Sortini: 볼 소트 퍼즐 — 1.0 정식 출시" />
+  <meta property="og:description" content="튜브 크기가 제각각인 볼 소트 퍼즐. 1,000개 레벨, 무료." />
+  <meta property="og:image" content="https://doubleupstudio.com/assets/img/games/sortini-og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="theme-color" content="#0a0c12" />
 
@@ -23,21 +28,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=20260923" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=20261020" />
 </head>
 
 <!--
-  소르티니 단독 소개 페이지 — 다른 메뉴/링크 없이 소르티니 내용만 담습니다.
+  소르티니 단독 소개 페이지 (한국어). 영문판: /games/sortini/en/ — 수정 시 두 파일을 함께 갱신.
+  다른 메뉴/링크 없이 소르티니 내용만. 헤더 로고 → 홈, 우측 KO|EN 전환.
   유지보수:
-    - 스크린샷 원본은 E:\_doubleupstudio\sortini\ (git 제외) → 540px 폭 JPG로 줄여 assets/img/games/sortini/shot-N.jpg
-    - 새 버전: "업데이트 내역" 맨 위에 항목 추가 + "현재 제공 중" 버전 표기 갱신
-    - 비공개 테스트 종료 후: Google Play 버튼의 btn--disabled 제거 + href 활성화 ([D])
+    - 스크린샷 원본: E:\_doubleupstudio\sortini\ (git 제외) → 540px 폭 JPG → assets/img/games/sortini/shot-N.jpg
+    - 새 버전: "업데이트 내역" 맨 위에 항목 추가
+    - App Store 출시 시: .store-soon 을 Apple 공식 배지 링크로 교체
 -->
 
 <body>
   <a class="skip-link" href="#main">본문 바로가기</a>
 
-  <!-- 헤더는 로고만 — 클릭하면 홈으로 -->
   <header class="site-header">
     <div class="wrap">
       <div class="site-header__bar">
@@ -45,35 +50,46 @@
           <img src="/assets/img/logo-mark.png" alt="" width="32" height="32" />
           <span>DoubleUp Studio</span>
         </a>
+        <nav class="lang-switch" aria-label="언어 선택">
+          <span aria-current="true" lang="ko">KO</span>
+          <a href="/games/sortini/en/" hreflang="en" lang="en">EN</a>
+        </nav>
       </div>
     </div>
   </header>
 
   <main id="main">
-    <!-- ============================== banner + title ============================== -->
+    <!-- ============================== hero ============================== -->
     <section class="page-hero">
       <div class="wrap game-hero">
         <div class="game-hero__info">
-          <img class="game-page__banner" src="/assets/img/games/sortini-banner.webp"
-               alt="소르티니 (Sortini) 키 아트 — 색색의 공이 담긴 튜브 세 개와 SORTINI 로고"
-               width="1024" height="500" fetchpriority="high" />
+          <img class="game-page__banner" src="/assets/img/games/sortini-keyart.webp"
+               alt="Sortini 키 아트 — 별빛 호수 위 색색의 공이 담긴 튜브 세 개와 SORTINI 로고"
+               width="1200" height="800" fetchpriority="high" />
           <div class="tag-row" style="margin-top:1.5rem">
-            <span class="tag tag--amber">개발 중 · 비공개 테스트</span>
+            <span class="tag tag--lime">서비스 중</span>
             <span class="tag">퍼즐</span>
-            <span class="tag">싱글플레이</span>
             <span class="tag">무료</span>
           </div>
-          <h1 style="margin-top:.85rem">소르티니 (Sortini)</h1>
-          <p class="lead">같은 색 공을 하나의 튜브에 모으는 정리 퍼즐. 규칙은 3초, 한 판은 1분.</p>
+          <h1 style="margin-top:.85rem">Sortini: 볼 소트 퍼즐</h1>
+          <p class="lead">같은 색 공을 한 튜브에 모으는 퍼즐. 그런데 튜브 크기가 제각각입니다.</p>
+
+          <div class="store-row">
+            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.chuno.sortini"
+               target="_blank" rel="noopener">
+              <img src="/assets/img/badges/google-play-ko.png" alt="Google Play에서 다운로드" width="145" height="56" />
+            </a>
+            <span class="store-soon" aria-label="App Store 출시 준비 중">App Store · 준비 중</span>
+          </div>
+          <p class="release-date">RELEASED 2026.10.19 · v1.0</p>
         </div>
 
-        <!-- 쇼츠(세로) 트레일러 — 무음 자동재생·반복, 소리는 플레이어에서 켤 수 있음 -->
         <div class="game-hero__video">
           <p class="eyebrow">Trailer</p>
           <div class="video-embed video-embed--shorts">
             <iframe
-              src="https://www.youtube-nocookie.com/embed/04UIN1jTS1M?autoplay=1&mute=1&loop=1&playlist=04UIN1jTS1M&playsinline=1&rel=0&modestbranding=1"
-              title="소르티니 (Sortini) 트레일러"
+              src="https://www.youtube-nocookie.com/embed/5wP1LPyWqNQ?autoplay=1&mute=1&loop=1&playlist=5wP1LPyWqNQ&playsinline=1&rel=0&modestbranding=1"
+              title="Sortini 트레일러"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen></iframe>
@@ -82,50 +98,40 @@
       </div>
     </section>
 
-    <!-- ============================== about the game ============================== -->
+    <!-- ============================== launch ============================== -->
     <section class="section">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow">About</p>
-          <h2>게임 소개</h2>
+          <p class="eyebrow">1.0 Launch</p>
+          <h2>1.0 정식 출시</h2>
         </div>
         <div class="doc">
           <p>
-            소르티니는 여러 튜브에 섞여 있는 색색의 공을 옮겨, 튜브마다 같은 색 공만 남도록
-            정리하는 퍼즐입니다. 공은 튜브 맨 위에서만 꺼낼 수 있고, 같은 색 위에만 올릴 수
-            있습니다. 규칙은 이것뿐입니다.
+            2026년 10월 19일, <strong>Sortini: 볼 소트 퍼즐</strong>이 Google Play에 정식 출시되었습니다.
+            같은 색 공을 한 튜브에 모으는 볼 소트 퍼즐인데, Sortini에서는 <strong>튜브 크기가 제각각</strong>이에요.
+            작은 튜브를 잠깐 보관소로 쓸지, 큰 튜브부터 비울지 — 매 판 새로운 공략을 고민하게 됩니다.
           </p>
-          <p>
-            한 판은 1분이면 끝나지만, 레벨이 올라갈수록 한 수 앞을 더 내다봐야 합니다.
-            튜토리얼 없이 첫 화면에서 바로 손가락이 움직이는 것을 목표로 만들었습니다.
-          </p>
-          <h3>현재 제공 중 <span class="muted" style="font-weight:400">— v0.6.0 (빌드 23)</span></h3>
-          <ul>
-            <li>스테이지 1 ~ 350 플레이 가능</li>
-            <li>튜브마다 용량이 다른 <strong>가변 용량 튜브 퍼즐</strong> — Sortini만의 차별점</li>
-            <li>아이템 3종: 되돌리기(Undo), 튜브 추가(Extra Tube), 섞기(Shuffle)</li>
-            <li>타이머 기반 크라운 챌린지 + Google Play Games 리더보드 연동</li>
-            <li>Google 계정 연동으로 진행 상황 저장</li>
-          </ul>
         </div>
+      </div>
+    </section>
 
-        <div class="grid cols-3 mt-2">
-          <div class="panel">
-            <p class="eyebrow">Platform</p>
-            <h3>Android · iOS</h3>
-            <p class="mb-0 muted">Unity로 개발. iOS 버전은 Android 공개 이후 순차 준비.</p>
-          </div>
-          <div class="panel">
-            <p class="eyebrow">Price</p>
-            <h3>무료</h3>
-            <p class="mb-0 muted">광고 포함. 광고 제거 인앱 구매 제공 예정.</p>
-          </div>
-          <div class="panel">
-            <p class="eyebrow">Status</p>
-            <h3>비공개 테스트</h3>
-            <p class="mb-0 muted">Google Play 비공개 테스트 진행 중. 공개 출시일 미정.</p>
-          </div>
+    <!-- ============================== features ============================== -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Features</p>
+          <h2>1.0에 들어 있는 것</h2>
         </div>
+        <ul class="feature-list">
+          <li><strong>크기가 다른 튜브</strong>2 · 4 · 6 · 8칸 튜브가 한 판에 섞여 나와요.</li>
+          <li><strong>1,000개 레벨</strong>쉬운 워밍업부터 머리를 쥐어짜는 판까지 차근차근 어려워져요. 모든 레벨은 아이템 없이도 풀 수 있게 만들었어요.</li>
+          <li><strong>HARD &amp; EXTREME</strong>챕터 끝마다 HARD 레벨, 가끔은 정말 어려운 EXTREME 레벨이 기다리고 있어요.</li>
+          <li><strong>크라운 챌린지</strong>빠르게 풀수록 더 좋은 크라운을 받아요.</li>
+          <li><strong>리더보드</strong>Google Play 게임즈 리더보드에서 다른 플레이어와 기록을 겨뤄 보세요.</li>
+          <li><strong>도움 아이템 3종</strong>되돌리기(방금 한 수 취소) · 튜브 추가(빈 튜브 하나 더) · 섞기(공을 다시 섞기).</li>
+          <li><strong>레트로 픽셀 감성</strong>밤하늘 배경의 픽셀 아트, 어두운 곳에서도 구분하기 쉽게 다듬은 공 색상.</li>
+          <li><strong>한 손으로 즐기는 세로 화면</strong>한국어 · 영어 지원, 광고 제거 상품 제공.</li>
+        </ul>
       </div>
     </section>
 
@@ -136,65 +142,72 @@
           <p class="eyebrow">Screenshots</p>
           <h2>스크린샷</h2>
         </div>
-        <!-- 원본: E:\_doubleupstudio\sortini\ (git 제외). 교체 시 540px 폭으로 줄여 shot-N.jpg 로 저장 -->
         <div class="shots">
-          <img src="/assets/img/games/sortini/shot-1.jpg" alt="소르티니 스크린샷 1" width="540" height="1170" loading="lazy" />
-          <img src="/assets/img/games/sortini/shot-2.jpg" alt="소르티니 스크린샷 2" width="540" height="1170" loading="lazy" />
-          <img src="/assets/img/games/sortini/shot-3.jpg" alt="소르티니 스크린샷 3" width="540" height="1170" loading="lazy" />
-          <img src="/assets/img/games/sortini/shot-4.jpg" alt="소르티니 스크린샷 4" width="540" height="1170" loading="lazy" />
-          <img src="/assets/img/games/sortini/shot-5.jpg" alt="소르티니 스크린샷 5" width="540" height="1170" loading="lazy" />
-          <img src="/assets/img/games/sortini/shot-6.jpg" alt="소르티니 스크린샷 6" width="540" height="1170" loading="lazy" />
-          <img src="/assets/img/games/sortini/shot-7.jpg" alt="소르티니 스크린샷 7" width="540" height="1170" loading="lazy" />
-          <img src="/assets/img/games/sortini/shot-8.jpg" alt="소르티니 스크린샷 8" width="540" height="1170" loading="lazy" />
+          <img src="/assets/img/games/sortini/shot-1.jpg" alt="크기가 다른 튜브가 섞인 레벨 359" width="540" height="1170" loading="lazy" />
+          <img src="/assets/img/games/sortini/shot-2.jpg" alt="12가지 색이 등장하는 레벨 812" width="540" height="1170" loading="lazy" />
+          <img src="/assets/img/games/sortini/shot-3.jpg" alt="6칸과 2칸 튜브 조합, 레벨 953" width="540" height="1170" loading="lazy" />
+          <img src="/assets/img/games/sortini/shot-4.jpg" alt="섞기 아이템 사용 화면" width="540" height="1170" loading="lazy" />
+          <img src="/assets/img/games/sortini/shot-5.jpg" alt="HARD 레벨 시작 화면" width="540" height="1170" loading="lazy" />
+          <img src="/assets/img/games/sortini/shot-6.jpg" alt="EXTREME 레벨 시작 화면" width="540" height="1170" loading="lazy" />
+          <img src="/assets/img/games/sortini/shot-7.jpg" alt="클리어 후 크라운 획득 화면" width="540" height="1170" loading="lazy" />
+          <img src="/assets/img/games/sortini/shot-8.jpg" alt="광고 제거 상품 안내 팝업" width="540" height="1170" loading="lazy" />
         </div>
       </div>
     </section>
 
-    <!-- ============================== changelog ============================== -->
+    <!-- ============================== updates ============================== -->
     <section class="section">
       <div class="wrap">
         <div class="section-head">
           <p class="eyebrow">Updates</p>
-          <h2>업데이트 내역</h2>
+          <h2>업데이트</h2>
         </div>
-        <!-- 새 버전은 맨 위에 <li> 추가 -->
         <ul class="changelog">
           <li>
             <div class="changelog__head">
-              <span class="changelog__ver">v0.6.0 (빌드 23)</span>
-              <span class="changelog__date">2026.09 · 비공개 테스트</span>
+              <span class="changelog__ver">1.1 업데이트 예정</span>
+              <span class="changelog__date">COMING SOON</span>
+            </div>
+            <p class="muted" style="margin:0 0 .5rem">출시 후 플레이 데이터를 보면서 다음 내용을 준비하고 있어요. (내용과 시기는 바뀔 수 있어요.)</p>
+            <ul>
+              <li><b>난이도 다듬기</b> — 많은 분들이 막히는 레벨을 찾아 더 납득할 수 있는 난이도로 조정해요.</li>
+              <li><b>색 구분 도우미</b> — 공에 기호를 함께 표시하는 옵션을 추가해, 색을 구분하기 어려운 분도 편하게 즐길 수 있게 할게요.</li>
+              <li><b>개인정보 옵션</b> — 설정에서 광고 동의를 언제든 바꿀 수 있는 메뉴를 추가해요.</li>
+              <li><b>유럽 지역 출시</b> — 위 준비가 끝나면 유럽(EU) · 영국 · 스위스에서도 만날 수 있어요.</li>
+              <li><b>안정성 개선</b> — 오류 보고를 더 자세히 받아 문제를 더 빨리 고쳐요.</li>
+            </ul>
+          </li>
+          <li>
+            <div class="changelog__head">
+              <span class="changelog__ver">1.0 정식 출시</span>
+              <span class="changelog__date">2026.10.19</span>
             </div>
             <ul>
-              <li>랭킹 화면: 내 기록을 노란 테두리로 강조, 긴 닉네임은 말줄임 처리</li>
-              <li>튜토리얼 문구가 설정 팝업 위에 겹치던 문제 수정</li>
-              <li>광고 제거 구매 · 복원 후 설정 팝업의 Remove Ads 버튼 자동 숨김</li>
+              <li>Google Play 정식 출시 — 1,000개 레벨, 크라운 챌린지, 리더보드, 도움 아이템 3종</li>
             </ul>
           </li>
         </ul>
-
-        <div class="panel mt-2">
-          <p class="eyebrow">Roadmap</p>
-          <h3>앞으로의 계획</h3>
-          <ul class="muted" style="margin:0; padding-left:1.2rem">
-            <li>스테이지를 단계적으로 확장하여 최종 <strong>3,000스테이지</strong>까지 출시 예정</li>
-            <li class="mb-0">신규 스테이지는 업데이트마다 순차 추가</li>
-          </ul>
-        </div>
       </div>
     </section>
 
-    <!-- ============================== download ============================== -->
+    <!-- ============================== download / feedback ============================== -->
     <section class="section">
       <div class="wrap">
         <div class="panel panel--sky center">
           <p class="eyebrow">Download</p>
-          <h2>Google Play 비공개 테스트 진행 중</h2>
-          <p class="lead">공개 출시 후 아래 버튼이 활성화됩니다.</p>
-          <div class="btn-row mt-2" style="justify-content:center">
-            <!-- [D] 공개 후: class="btn btn--solid" href="https://play.google.com/store/apps/details?id=com.chuno.sortini" -->
-            <span class="btn btn--disabled" aria-disabled="true">Google Play — 준비 중</span>
-            <span class="btn btn--disabled" aria-disabled="true">App Store — 준비 중</span>
+          <h2>지금 무료로 플레이하세요</h2>
+          <div class="store-row" style="justify-content:center">
+            <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.chuno.sortini"
+               target="_blank" rel="noopener">
+              <img src="/assets/img/badges/google-play-ko.png" alt="Google Play에서 다운로드" width="145" height="56" />
+            </a>
+            <span class="store-soon" aria-label="App Store 출시 준비 중">App Store · 준비 중</span>
           </div>
+          <p class="muted" style="margin-top:1.5rem">
+            플레이해 보시고 의견은 <a href="mailto:contact@doubleupstudio.com">contact@doubleupstudio.com</a>이나
+            스토어 리뷰로 남겨 주세요. 하나하나 읽고 다음 업데이트에 반영할게요.<br />
+            즐겁게 정리해 주세요! — DoubleUp Studio
+          </p>
         </div>
       </div>
     </section>
@@ -203,7 +216,7 @@
   <footer class="site-footer">
     <div class="wrap">
       <div class="site-footer__legal" style="margin-top:0; border:0; padding-top:0">
-        <span>&copy; 2026 DoubleUp Studio. All rights reserved.</span>
+        <span>&copy; 2026 DoubleUp Studio. Google Play 및 Google Play 로고는 Google LLC의 상표입니다.</span>
         <span class="arcade" style="font-size:.6rem">SORTINI</span>
       </div>
     </div>
