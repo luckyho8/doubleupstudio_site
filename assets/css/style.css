@@ -455,7 +455,7 @@ main { flex: 1 0 auto; }
 
 /* hero: banner + copy on the left, vertical Shorts player on the right;
    stacks on phones */
-.game-hero { display: grid; gap: clamp(1.5rem, 4vw, 2.5rem); align-items: center; }
+.game-hero { display: grid; gap: clamp(1.5rem, 4vw, 2.5rem); align-items: start; }
 .game-hero__info .game-page__banner { max-width: 640px; }
 .video-embed--shorts {
   aspect-ratio: 9 / 16;
