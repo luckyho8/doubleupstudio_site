@@ -7,3 +7,6 @@ desktop.ini
 
 # raw screenshot drop folder (optimized copies live in assets/img/games/)
 /sortini/
+
+# local working notes (not published)
+PROGRESS.md
