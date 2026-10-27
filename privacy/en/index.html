@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy | DoubleUp Studio</title>
-  <meta name="description" content="Privacy policy for DoubleUp Studio mobile games. We use Google AdMob advertising, Firebase Analytics/Crashlytics, and Google Play Games Services (leaderboards)." />
+  <meta name="description" content="Privacy policy for DoubleUp Studio mobile games. We use Google AdMob advertising, Firebase Analytics/Crashlytics, Google Play Games Services (leaderboards), and Firebase Authentication/Cloud Firestore (in-game ranking)." />
   <link rel="canonical" href="https://doubleupstudio.com/privacy/en/" />
   <link rel="alternate" hreflang="ko" href="https://doubleupstudio.com/privacy/" />
   <link rel="alternate" hreflang="en" href="https://doubleupstudio.com/privacy/en/" />
@@ -30,10 +30,20 @@
 
 <!--
   ===========================================================================
-  MAINTENANCE NOTE (v1.3, 2026-09-01: Google Play Games Services sign-in + leaderboard applied)
+  MAINTENANCE NOTE (v1.4, 2026-10-27: studio-run in-game ranking (Firebase Authentication + Cloud Firestore) applied)
+                   (v1.3, 2026-09-01: Google Play Games Services sign-in + leaderboard applied)
                    (v1.2, 2026-08-20: in-app purchases (ad removal) applied)
                    (v1.1, 2026-08-19: AdMob + Firebase Analytics/Crashlytics applied)
 
+  Updated in v1.4: meta description, summary (fixed "stored only on your device / only your
+    leaderboard score is stored with Google"), [S2.1] Firebase sign-in linked to Play Games,
+    [S2.2] "on your device only" wording now lists exceptions + in-game ranking items, timing
+    and visibility, [S3] purposes, Firebase Authentication / Cloud Firestore row and paragraph
+    in [S4], [S7] direct-collection wording, [S8] internet permission purpose, [S9] game data
+    wording + ranking record retention, [S10] international transfers (Firestore in Seoul,
+    Firebase Auth on global infrastructure), [S11] "not transmitted to a server" wording,
+    [S12.4] note that the in-game ranking is separate, new [S12.5] (Delete Ranking Record
+    button, difference from Reset Data, email requests).
   Updated in v1.3: summary, [S2.1] optional GPGS sign-in wording, [S2.2] leaderboard score
     transmission exception, [S3] purposes, GPGS row in [S4], leaderboard score retention
     in [S9], and account-unlink / data-deletion steps in [S12.4].
@@ -42,12 +52,17 @@
     - Mediation / Unity Ads etc. added  -> add rows to the [S4] table
     - Google Play Families programme    -> add the TFCD/TFUA paragraph in [S7]
     - Firebase products change          -> update [S2.2] and [S4]
+    - In-app purchase items change      -> update [S2.3], [S4] and [S9]
+    - Ranking fields / send timing / Firestore region / retention change
+                                        -> update [S2.2], [S4], [S9], [S10] and [S12.5]
 
   Also update on every revision:
     - Effective / last updated date and version at the top, plus [S15] history
     - Keep /privacy/index.html (Korean) in sync
     - Google Play Console -> App content -> Data safety form
       (declare advertising ID, app interaction events, crash logs; AD_ID permission)
+      (v1.4: also reflect ranking user ID / nickname / game records sent and shown to other
+       players, and the in-app deletion method)
     - App Store Connect -> App Privacy label + ATT configuration
   ===========================================================================
 -->
@@ -98,17 +113,27 @@
         <article class="doc">
 
           <div class="doc-meta">
-            <span><b>Effective</b> 1 September 2026</span>
-            <span><b>Last updated</b> 1 September 2026</span>
-            <span><b>Version</b> 1.3</span>
+            <span><b>Effective</b> 3 November 2026</span>
+            <span><b>Last updated</b> 27 October 2026</span>
+            <span><b>Version</b> 1.4</span>
+          </div>
+
+          <div class="note">
+            <strong>Notice of revision.</strong> We revised this policy to version 1.4 for the new in-game ranking.
+            It takes effect on <strong>3 November 2026</strong>; until then, the previous policy (1.3) applies.
+            See <a href="#s15">15. Revision History</a> for the main changes.
           </div>
 
           <div class="note note--sky">
             <strong>Summary.</strong> DoubleUp Studio games are free to play and are funded by
             Google AdMob advertising; we also use Firebase Analytics and Crashlytics to improve
             stability and gameplay. There is no separate sign-up; you may optionally sign in with
-            <strong>Google Play Games</strong> to use leaderboards. Game progress is stored only
-            on your device, and if you sign in, only your leaderboard score is stored with Google.
+            <strong>Google Play Games</strong> to use leaderboards and rankings. Game progress is
+            stored on your device by default. If you sign in, your Google Play Games leaderboard
+            score is stored with Google, and for our own <strong>in-game ranking</strong> your
+            nickname, highest cleared level, and cumulative best clear time are stored with
+            Firebase (Google LLC) and shown to other players. You can erase your ranking record at
+            any time with the <em>Delete Ranking Record</em> button in the game's settings.
             Advertising identifiers and device information may be transmitted to
             Google as described below. This summary is for convenience; the sections below are the
             operative text.
@@ -168,11 +193,17 @@
           </p>
           <p>
             You may optionally sign in with <strong>Google Play Games</strong> to use the
-            leaderboard. Signing in is <strong>optional</strong>; everything except the leaderboard
-            works without it. When you sign in, the gamer profile that Google Play Games Services
-            derives from your Google account — <strong>player ID, gamer nickname, and
-            avatar</strong> — is linked to the game. We do not receive your Google account email
-            address or real name.
+            leaderboard and the in-game ranking. Signing in is <strong>optional</strong>; everything
+            except the leaderboard and ranking works without it. When you sign in, the gamer profile
+            that Google Play Games Services derives from your Google account — <strong>player ID,
+            gamer nickname, and avatar</strong> — is linked to the game. We do not receive your
+            Google account email address or real name.
+          </p>
+          <p>
+            To run the in-game ranking, when you sign in to Play Games the game also signs in to
+            <strong>Firebase Authentication</strong> (Google LLC) automatically using the same Play
+            Games account. Firebase then creates a <strong>Firebase user ID</strong> linked to your
+            Play Games player ID. You do not need to enter any information.
           </p>
           <p>
             If you contact us by email, we receive your <strong>email address and the content of
@@ -183,15 +214,45 @@
           <h3>2.2 Information processed automatically during play</h3>
           <p>
             Game progress (levels, clear records, sound and vibration settings) is written to local
-            storage <strong>on your device only</strong> through Unity's local save facilities.
-            It is not transmitted to our servers or to any third party. Uninstalling the game
-            deletes this data.
+            storage <strong>on your device</strong> through Unity's local save facilities.
+            Except for the two cases below, it is not transmitted to our servers or to any third
+            party. Uninstalling the game deletes the data stored on your device.
           </p>
           <p>
-            As an exception, if you are signed in to Google Play Games, your <strong>leaderboard
-            score (highest level reached and cumulative clear time)</strong> is transmitted to and
-            stored by Google Play Games Services for ranking, and may be shown to other players in
-            ranked form together with your gamer nickname and avatar.
+            <strong>Exception 1: Google Play Games leaderboard</strong> — if you are signed in to
+            Google Play Games, your <strong>leaderboard score (highest level reached and cumulative
+            clear time)</strong> is transmitted to and stored by Google Play Games Services for
+            ranking, and may be shown to other players in ranked form together with your gamer
+            nickname and avatar.
+          </p>
+          <p>
+            <strong>Exception 2: in-game ranking</strong> — if you are signed in to Google Play
+            Games, the following information is stored for our own in-game ranking in
+            <strong>Cloud Firestore</strong> (Google LLC; data location: Seoul, Republic of Korea)
+            as one ranking record per player. Each record is keyed by your Firebase user ID.
+          </p>
+          <ul>
+            <li>Play Games nickname (may be shortened to fit 32 bytes)</li>
+            <li>Highest cleared level</li>
+            <li>Cumulative best clear time</li>
+            <li>A ranking score calculated from the two values above</li>
+            <li>Last update time (server time)</li>
+          </ul>
+          <p>
+            Your ranking record is sent automatically on first connection, every 5 levels, when you
+            open the ranking screen, and when the game moves to the background, and it is updated
+            <strong>only when your record has improved</strong>. The stored nickname, level, and
+            time are <strong>shown to other signed-in players</strong> on the game's ranking screen
+            (the top 10 and your own rank). You can delete your ranking record at any time
+            (Section 12.5).
+          </p>
+          <p>
+            The in-game ranking is a separate leaderboard <strong>operated by us</strong>, not the
+            Google Play Games leaderboard. Therefore, <strong>even if you have set your gameplay
+            activity or profile to private in Google Play Games</strong>, your nickname, level, and
+            time are shown to other players in the in-game ranking. You <strong>join the ranking
+            automatically</strong> when you sign in with Play Games; to stop taking part, tap the
+            <em>Delete Ranking Record</em> button in Settings (Section 12.5).
           </p>
           <p>
             Our games include the <strong>Google AdMob</strong> SDK for advertising and the
@@ -239,6 +300,7 @@
           <ul>
             <li>Providing game functionality and saving progress (processed on your device)</li>
             <li>Providing leaderboard rankings (Google Play Games Services — signed-in users only)</li>
+            <li>Providing the in-game ranking — storing ranking records, calculating ranks, and showing them to other players (Firebase Authentication / Cloud Firestore — signed-in users only)</li>
             <li>Serving advertising and measuring its performance (Google AdMob)</li>
             <li>Diagnosing crashes and improving stability (Firebase Crashlytics)</li>
             <li>Analysing usage statistics to improve gameplay (Firebase Analytics)</li>
@@ -294,6 +356,12 @@
                   <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">View</a></td>
                 </tr>
                 <tr>
+                  <td>Firebase Authentication / Cloud Firestore (Google LLC)</td>
+                  <td>Sign-in verification and ranking record storage for our own in-game ranking — Play Games signed-in users only</td>
+                  <td>Firebase user ID (linked to Play Games player ID), Play Games nickname, highest cleared level, cumulative best clear time, ranking score, last update time</td>
+                  <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">View</a></td>
+                </tr>
+                <tr>
                   <td>Google Play Billing (Google LLC)</td>
                   <td>Processing in-app purchases and restoring purchases</td>
                   <td>Purchase receipts, purchase history, payment method details (handled directly by Google; we never receive payment method details)</td>
@@ -326,6 +394,13 @@
             Firebase Crashlytics collects stack traces and device state at the moment of an error.
             Both are used to improve and stabilise the games. See
             <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Privacy and Security in Firebase</a> for details.
+          </p>
+          <p>
+            Firebase Authentication and Cloud Firestore are used only for the in-game ranking that
+            we operate ourselves. Firebase Authentication verifies players who sign in with their
+            Play Games account, and Cloud Firestore stores the ranking records described in
+            Section 2.2. The Google Play Games leaderboard is managed separately by Google and
+            continues to be offered alongside it.
           </p>
           <p>
             If we add further ad networks (for example via mediation) or other SDKs, we will
@@ -395,8 +470,8 @@
             under 14 (Republic of Korea).
           </p>
           <p>
-            We collect no names, contact details, or other directly identifying information inside
-            the game, and we cap AdMob's maximum ad content rating at G (general audiences) so that
+            We collect no names or contact details inside the game (if you join the in-game
+            ranking, we process only your Play Games nickname and game records), and we cap AdMob's maximum ad content rating at G (general audiences) so that
             ads unsuitable for children are not shown. If we learn that we have received personal
             information from a child, we will delete it promptly.
           </p>
@@ -426,7 +501,7 @@
           <p>
             We use the internet permission (INTERNET), network state permission
             (ACCESS_NETWORK_STATE), and advertising ID permission
-            (com.google.android.gms.permission.AD_ID) to load advertising and analytics.
+            (com.google.android.gms.permission.AD_ID) for advertising, analytics, and rankings.
             The game itself remains playable offline, but ads will not be shown.
           </p>
 
@@ -434,13 +509,19 @@
           <h2 id="s9">9. Retention and Deletion</h2>
           <ul>
             <li>
-              <strong>Game data</strong> — stored only on your device and deleted when you uninstall
-              the game. We do not retain it.
+              <strong>Game data</strong> — stored on your device and deleted when you uninstall
+              the game. Apart from the ranking record below, we do not retain game data.
             </li>
             <li>
               <strong>Leaderboard scores</strong> — retained by Google Play Games Services
               (Google LLC). Your score may remain after you uninstall the game; to delete it,
               use the Play Games profile data deletion steps in Section 12.4.
+            </li>
+            <li>
+              <strong>In-game ranking records</strong> — retained by us in Cloud Firestore
+              (Google LLC) until you delete them or until the service ends. Records that have not
+              been updated for a long time may be removed. Your ranking record remains even if you
+              uninstall the game or use <em>Reset Data</em>; to delete it, follow Section 12.5.
             </li>
             <li>
               <strong>Enquiry emails</strong> — kept for up to one year after the enquiry is
@@ -469,6 +550,12 @@
             privacy policy.
           </p>
           <p>
+            In-game ranking records are stored in Cloud Firestore's <strong>Seoul, Republic of
+            Korea region</strong>. However, Firebase Authentication, which verifies sign-in for the
+            ranking, runs on Google's global infrastructure, so authentication information such as
+            your Firebase user ID may be processed on servers outside your country.
+          </p>
+          <p>
             Our website hosting (GitHub, Inc.) and email services are operated by providers with
             servers outside the Republic of Korea, so access logs and message contents may be stored
             on overseas servers.
@@ -480,7 +567,7 @@
           <p>We take the following measures to keep information safe:</p>
           <ul>
             <li>Collecting the minimum information necessary to provide the Service</li>
-            <li>Processing game data on the device rather than transmitting it to a server</li>
+            <li>Processing game data on the device, and sending only the minimum fields needed to show ranks to the in-game ranking</li>
             <li>Serving the entire website over HTTPS</li>
             <li>Restricting access to the enquiry mailbox</li>
           </ul>
@@ -536,6 +623,35 @@
               process as well.
             </li>
           </ul>
+          <p>
+            The steps above apply to Play Games data managed by Google. Ranking records for the
+            in-game ranking we operate are kept separately; to delete them, follow Section 12.5.
+          </p>
+
+          <h3 id="ranking-delete">12.5 Deleting your in-game ranking record</h3>
+          <p>
+            You can delete your record in the in-game ranking we operate as follows:
+          </p>
+          <ul>
+            <li>
+              <strong>Delete in the game</strong> — tap <em>Settings &gt; Delete Ranking Record</em>.
+              This deletes your ranking record stored in Cloud Firestore and your Firebase
+              Authentication account, and the game stops sending ranking data. You will only rejoin
+              if you tap <em>Tap to join the ranking</em> on the ranking screen yourself.
+            </li>
+            <li>
+              <strong>Difference from Reset Data</strong> — the <em>Reset Data</em> button in
+              Settings resets only the game progress stored on your device (your highest cleared
+              level is kept) and does not delete your ranking record.
+            </li>
+            <li>
+              <strong>Request by email</strong> — even if you have already uninstalled the game or
+              cannot open it, you can send a deletion request to
+              <a href="mailto:contact@doubleupstudio.com">contact@doubleupstudio.com</a>. Please
+              include your <strong>Play Games nickname</strong> so we can find your record; we will
+              act on it without undue delay once confirmed.
+            </li>
+          </ul>
 
           <!-- ================= S13. Changes ================= -->
           <h2 id="s13">13. Changes to This Policy</h2>
@@ -573,6 +689,11 @@
                 </tr>
               </thead>
               <tbody>
+                <tr>
+                  <td>1.4</td>
+                  <td>2026-11-03</td>
+                  <td>Revised for the introduction of our own in-game ranking (Firebase Authentication / Cloud Firestore) — added disclosure of Firebase sign-in linked to Play Games, ranking record fields (nickname, highest cleared level, cumulative best clear time, ranking score, update time), when they are sent, who can see them, storage location (Seoul), retention, and in-game deletion; corrected wording that game data is stored only on the device [Summary / S2.1 / S2.2 / S3 / S4 / S7 / S8 / S9 / S10 / S11 / S12.4 / S12.5]</td>
+                </tr>
                 <tr>
                   <td>1.3</td>
                   <td>2026-09-01</td>
