@@ -504,6 +504,11 @@ main { flex: 1 0 auto; }
   text-align: center;
   padding: 1rem;
 }
+/* landscape (16:9) screenshots, e.g. MAZEHOLD */
+.shots.shots--landscape { grid-template-columns: 1fr; }
+@media (min-width: 620px) { .shots.shots--landscape { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .shots.shots--landscape { grid-template-columns: repeat(3, 1fr); } }
+.shots.shots--landscape img { aspect-ratio: 16 / 9; }
 /* KO | EN switch — links to the other language URL (no JS swap) */
 .lang-switch { display: inline-flex; border: 2px solid var(--line); }
 .lang-switch a, .lang-switch span {

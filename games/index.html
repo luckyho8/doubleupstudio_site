@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261030" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=2026103002" />
 </head>
 
 <body>
@@ -102,14 +102,14 @@
           <!-- 새 게임을 추가할 때는 위 .game-card 블록을 복사해서 쓰세요. -->
 
           <!-- ================================================================
-               game:mazehold
+               game:mazehold  — 카드 클릭 → /games/mazehold/ 소개 페이지
                출시 후 할 일:
-                 1) .game-card__art 를 <img src="/assets/img/games/mazehold-cover.png"> 로 교체
-                 2) tag--amber "개발 중" → tag--lime "출시됨" 으로 변경
-                 3) 아래 .btn-row 주석을 해제하고 스토어 링크 채우기
+                 1) tag--amber "개발 중" → tag--lime "서비스 중" 으로 변경, 출시 표기 갱신
+                 2) /games/mazehold/ 페이지 상단 주석의 체크리스트 진행
                ================================================================ -->
-          <article class="game-card">
-            <div class="game-card__art" aria-hidden="true">SCREENSHOT<br />COMING SOON</div>
+          <a class="game-card game-card--link" href="/games/mazehold/">
+            <img class="game-card__art game-card__art--img" src="/assets/img/games/mazehold-keyart.webp"
+                 alt="메이즈홀드 (MAZEHOLD) 키 아트" loading="lazy" />
             <div class="tag-row">
               <span class="tag tag--amber">개발 중</span>
               <span class="tag">타워 디펜스</span>
@@ -127,12 +127,7 @@
               <li><b>가격</b><span>무료</span></li>
               <li><b>출시</b><span>미정</span></li>
             </ul>
-            <!--
-            <div class="btn-row">
-              <a class="btn" href="STORE_URL_GOOGLE_PLAY">Google Play</a>
-            </div>
-            -->
-          </article>
+          </a>
 
           <article class="game-card game-card--empty">
             <p class="arcade" style="font-size:.7rem">SLOT 02</p>

@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" />
-  <link rel="stylesheet" href="/assets/css/style.css?v=20261030" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=2026103002" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -204,9 +204,10 @@
             </ul>
           </a>
 
-          <!-- game:mazehold — 출시 후 스크린샷과 스토어 링크로 교체 -->
-          <article class="game-card">
-            <div class="game-card__art" aria-hidden="true">SCREENSHOT<br />COMING SOON</div>
+          <!-- game:mazehold — 카드 클릭 → /games/mazehold/ 소개 페이지 (출시 시 꼬리표 · 출시 표기 변경) -->
+          <a class="game-card game-card--link" href="/games/mazehold/">
+            <img class="game-card__art game-card__art--img" src="/assets/img/games/mazehold-keyart.webp"
+                 alt="메이즈홀드 (MAZEHOLD) 키 아트" loading="lazy" />
             <div class="tag-row">
               <span class="tag tag--amber">개발 중</span>
               <span class="tag">타워 디펜스</span>
@@ -220,7 +221,7 @@
               <li><b>엔진</b><span>Unity</span></li>
               <li><b>출시</b><span>미정</span></li>
             </ul>
-          </article>
+          </a>
 
           <article class="game-card game-card--empty">
             <p class="arcade" style="font-size:.7rem">NEXT TITLE</p>
