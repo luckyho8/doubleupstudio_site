@@ -334,6 +334,22 @@ main { flex: 1 0 auto; }
   font-size: .85rem;
 }
 
+/* social links — official brand glyphs, single colour (sprite: assets/img/social.svg) */
+.site-footer ul.social { display: flex; gap: .5rem; margin-top: 1rem; }
+.site-footer ul.social li + li { margin-top: 0; }
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--line);
+  color: var(--ink-mid);
+}
+.social a:hover { color: var(--sky); border-color: var(--sky-deep); text-decoration: none; }
+.social svg { width: 20px; height: 20px; }
+.site-footer__legal ul.social { margin-top: 0; }
+
 /* 9. Hero ----------------------------------------------------------------- */
 .hero {
   position: relative;
@@ -606,6 +622,29 @@ main { flex: 1 0 auto; }
   word-break: break-all;
 }
 .contact-mail:hover { text-decoration: underline; }
+
+/* Contact: follow cards */
+.follow-grid { display: grid; gap: var(--gap); }
+@media (min-width: 720px) { .follow-grid { grid-template-columns: repeat(3, 1fr); } }
+.follow-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: .9rem;
+  align-items: center;
+  padding: 1.1rem 1.2rem;
+  border: 2px solid var(--line);
+  background: var(--bg-panel);
+  box-shadow: var(--shadow-hard);
+  color: var(--ink-mid);
+  text-decoration: none;
+  transition: transform .14s ease, border-color .14s ease;
+}
+.follow-card:hover { transform: translateY(-3px); border-color: var(--sky-deep); color: var(--ink-mid); }
+.follow-card svg { grid-row: span 3; width: 32px; height: 32px; color: var(--ink); }
+.follow-card:hover svg { color: var(--sky); }
+.follow-card__name { font-family: var(--font-pixel); font-weight: 700; color: var(--ink); }
+.follow-card__desc { font-size: .9rem; }
+.follow-card__handle { font-family: var(--font-pixel); font-size: .8rem; color: var(--ink-dim); }
 
 /* 13. Legal / policy documents -------------------------------------------- */
 .doc { max-width: 78ch; }
