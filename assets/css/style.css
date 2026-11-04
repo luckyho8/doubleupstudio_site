@@ -707,6 +707,32 @@ main { flex: 1 0 auto; }
 .note--sky { border-left-color: var(--sky); background: rgba(56, 189, 248, .05); }
 .note strong { color: var(--ink); }
 
+/* MAZEHOLD probability page — tables are pasted from the game's generator
+   (class="odds" / "history"), so style them here instead of editing the markup */
+.odds-doc .eyebrow a { color: inherit; text-decoration: none; }
+.doc table.odds th, .doc table.odds td,
+.doc table.history td { word-break: keep-all; overflow-wrap: break-word; }
+@media (max-width: 480px) {
+  .doc table.odds { font-size: .86rem; }
+  .doc table.odds th, .doc table.odds td { padding: .5rem .4rem; }
+}
+.doc table.odds td[rowspan] { vertical-align: middle; color: var(--ink); font-family: var(--font-pixel); white-space: nowrap; }
+.doc table.odds th:last-child,
+.doc table.odds td:last-child { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.doc table.history td:first-child { width: 1%; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+/* game info line under the store row: random-item notice + probability / privacy links */
+.game-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 1.25rem;
+  margin-top: .75rem;
+  font-size: .92rem;
+}
+.game-links a, .game-links span { display: inline-flex; align-items: center; min-height: 40px; }
+.game-links__notice { color: var(--amber); font-family: var(--font-pixel); font-weight: 700; }
+
 /* 14. Utilities ----------------------------------------------------------- */
 .center { text-align: center; }
 .mt-0 { margin-top: 0; }
