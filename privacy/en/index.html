@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy | DoubleUp Studio</title>
-  <meta name="description" content="Privacy policy for DoubleUp Studio mobile games. We use Google AdMob advertising, Firebase Analytics/Crashlytics, Google Play Games Services (leaderboards), and Firebase Authentication/Cloud Firestore (in-game ranking)." />
+  <meta name="description" content="Privacy policy for DoubleUp Studio mobile games. We use Google AdMob advertising, Firebase Analytics/Crashlytics, Google Play Games Services (leaderboards), and Firebase Authentication/Cloud Firestore (in-game ranking and cloud save), and how to delete your account." />
   <link rel="canonical" href="https://doubleupstudio.com/privacy/en/" />
   <link rel="alternate" hreflang="ko" href="https://doubleupstudio.com/privacy/" />
   <link rel="alternate" hreflang="en" href="https://doubleupstudio.com/privacy/en/" />
@@ -30,11 +30,19 @@
 
 <!--
   ===========================================================================
-  MAINTENANCE NOTE (v1.4, 2026-10-27: studio-run in-game ranking (Firebase Authentication + Cloud Firestore) applied)
+  MAINTENANCE NOTE (v1.5, 2026-11-12: MAZEHOLD cloud save, weekly raid ranking and account deletion applied)
+                   (v1.4, 2026-10-27: studio-run in-game ranking (Firebase Authentication + Cloud Firestore) applied)
                    (v1.3, 2026-09-01: Google Play Games Services sign-in + leaderboard applied)
                    (v1.2, 2026-08-20: in-app purchases (ad removal) applied)
                    (v1.1, 2026-08-19: AdMob + Firebase Analytics/Crashlytics applied)
 
+  Updated in v1.5: meta description, notice (Section 12.6 sentence), summary, [S2.2] Exception 2
+    marked (Sortini) + new Exception 3 (MAZEHOLD cloud save and stage/raid ranking), [S3] purposes,
+    [S4] Firestore row (cloud save, weekly raid ranking) and paragraph, [S7] cloud backup sentence,
+    [S8] internet permission purpose, [S9] immediate deletion on account deletion + weekly raid
+    records, [S10] MAZEHOLD storage location (not stated as Seoul - fix once the region is
+    confirmed), [S11], [S12.4] account deletion pointer, new [S12.6] (account deletion, links to
+    /games/mazehold/delete-account/en/). Keep in sync with the Korean memo.
   Updated in v1.4: meta description, summary (fixed "stored only on your device / only your
     leaderboard score is stored with Google"), [S2.1] Firebase sign-in linked to Play Games,
     [S2.2] "on your device only" wording now lists exceptions + in-game ranking items, timing
@@ -55,6 +63,8 @@
     - In-app purchase items change      -> update [S2.3], [S4] and [S9]
     - Ranking fields / send timing / Firestore region / retention change
                                         -> update [S2.2], [S4], [S9], [S10] and [S12.5]
+    - Cloud save fields / account deletion behaviour change
+                                        -> update [S2.2], [S4], [S9], [S12.6] and /games/mazehold/delete-account/
 
   Also update on every revision:
     - Effective / last updated date and version at the top, plus [S15] history
@@ -113,14 +123,15 @@
         <article class="doc">
 
           <div class="doc-meta">
-            <span><b>Effective</b> 27 October 2026</span>
-            <span><b>Last updated</b> 27 October 2026</span>
-            <span><b>Version</b> 1.4</span>
+            <span><b>Effective</b> 12 November 2026</span>
+            <span><b>Last updated</b> 12 November 2026</span>
+            <span><b>Version</b> 1.5</span>
           </div>
 
           <div class="note">
-            <strong>Notice of revision.</strong> We revised this policy to version 1.4 for the new in-game ranking.
-            It takes effect on <strong>27 October 2026</strong>. You can delete your in-game ranking record at any time (Section 12.5).
+            <strong>Notice of revision.</strong> We revised this policy to version 1.5 for MAZEHOLD's cloud save, raid ranking and account deletion.
+            It takes effect on <strong>12 November 2026</strong>. You can delete your in-game ranking record at any time (Section 12.5).
+            You can also delete your account and all of its server data (Section 12.6).
             See <a href="#s15">15. Revision History</a> for the main changes.
           </div>
 
@@ -134,6 +145,8 @@
             nickname, highest cleared level, and cumulative best clear time are stored with
             Firebase (Google LLC) and shown to other players. You can erase your ranking record at
             any time with the <em>Delete Ranking Record</em> button in the game's settings.
+            In MAZEHOLD, signing in backs up your game progress to the cloud, and
+            <em>Option → Delete Account</em> in the game erases your account and all data stored on our servers.
             Advertising identifiers and device information may be transmitted to
             Google as described below. This summary is for convenience; the sections below are the
             operative text.
@@ -215,7 +228,7 @@
           <p>
             Game progress (levels, clear records, sound and vibration settings) is written to local
             storage <strong>on your device</strong> through Unity's local save facilities.
-            Except for the two cases below, it is not transmitted to our servers or to any third
+            Except for the cases below, it is not transmitted to our servers or to any third
             party. Uninstalling the game deletes the data stored on your device.
           </p>
           <p>
@@ -226,7 +239,7 @@
             nickname and avatar.
           </p>
           <p>
-            <strong>Exception 2: in-game ranking</strong> — if you are signed in to Google Play
+            <strong>Exception 2: in-game ranking (Sortini)</strong> — if you are signed in to Google Play
             Games, the following information is stored for our own in-game ranking in
             <strong>Cloud Firestore</strong> (Google LLC; data location: Seoul, Republic of Korea)
             as one ranking record per player. Each record is keyed by your Firebase user ID.
@@ -253,6 +266,21 @@
             time are shown to other players in the in-game ranking. You <strong>join the ranking
             automatically</strong> when you sign in with Play Games; to stop taking part, tap the
             <em>Delete Ranking Record</em> button in Settings (Section 12.5).
+          </p>
+          <p>
+            <strong>Exception 3: cloud save and in-game ranking (MAZEHOLD)</strong> — if you are signed
+            in to Google Play Games in MAZEHOLD, the following information is stored in
+            <strong>Cloud Firestore</strong> (Google LLC), keyed by your Firebase user ID.
+          </p>
+          <ul>
+            <li><strong>Cloud save</strong> — game progress data (currency, owned towers, records). It is a backup that lets you continue on a new phone, and it is stored only when you are signed in.</li>
+            <li><strong>Stage ranking</strong> — display name (Play Games nickname) and score</li>
+            <li><strong>Weekly raid ranking</strong> — display name, score and related raid records</li>
+          </ul>
+          <p>
+            Display names and scores in the rankings are shown to other players on the game's
+            ranking screens. You can delete all of this at once with <em>Option → Delete Account</em>
+            in the game (Section 12.6).
           </p>
           <p>
             Our games include the <strong>Google AdMob</strong> SDK for advertising and the
@@ -301,6 +329,7 @@
             <li>Providing game functionality and saving progress (processed on your device)</li>
             <li>Providing leaderboard rankings (Google Play Games Services — signed-in users only)</li>
             <li>Providing the in-game ranking — storing ranking records, calculating ranks, and showing them to other players (Firebase Authentication / Cloud Firestore — signed-in users only)</li>
+            <li>Cloud save — restoring game progress when you change phones (MAZEHOLD, Cloud Firestore — signed-in users only)</li>
             <li>Serving advertising and measuring its performance (Google AdMob)</li>
             <li>Diagnosing crashes and improving stability (Firebase Crashlytics)</li>
             <li>Analysing usage statistics to improve gameplay (Firebase Analytics)</li>
@@ -357,8 +386,8 @@
                 </tr>
                 <tr>
                   <td>Firebase Authentication / Cloud Firestore (Google LLC)</td>
-                  <td>Sign-in verification and ranking record storage for our own in-game ranking — Play Games signed-in users only</td>
-                  <td>Firebase user ID (linked to Play Games player ID), Play Games nickname, highest cleared level, cumulative best clear time, ranking score, last update time</td>
+                  <td>Sign-in verification and ranking record storage for our own in-game ranking, and cloud save (MAZEHOLD) — Play Games signed-in users only</td>
+                  <td>Firebase user ID (linked to Play Games player ID), Play Games nickname, highest cleared level, cumulative best clear time, ranking score, last update time, cloud save (game progress data — currency, owned towers, records; signed-in users only), weekly raid ranking (display name, score)</td>
                   <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">View</a></td>
                 </tr>
                 <tr>
@@ -397,8 +426,8 @@
           </p>
           <p>
             Firebase Authentication and Cloud Firestore are used only for the in-game ranking that
-            we operate ourselves. Firebase Authentication verifies players who sign in with their
-            Play Games account, and Cloud Firestore stores the ranking records described in
+            we operate ourselves and for cloud save. Firebase Authentication verifies players who sign in with their
+            Play Games account, and Cloud Firestore stores the ranking records and cloud save data described in
             Section 2.2. The Google Play Games leaderboard is managed separately by Google and
             continues to be offered alongside it.
           </p>
@@ -471,7 +500,8 @@
           </p>
           <p>
             We collect no names or contact details inside the game (if you join the in-game
-            ranking, we process only your Play Games nickname and game records), and we cap AdMob's maximum ad content rating at G (general audiences) so that
+            ranking, we process only your Play Games nickname and game records; in MAZEHOLD, signing in
+            also backs up your game progress to the cloud), and we cap AdMob's maximum ad content rating at G (general audiences) so that
             ads unsuitable for children are not shown. If we learn that we have received personal
             information from a child, we will delete it promptly.
           </p>
@@ -501,7 +531,7 @@
           <p>
             We use the internet permission (INTERNET), network state permission
             (ACCESS_NETWORK_STATE), and advertising ID permission
-            (com.google.android.gms.permission.AD_ID) for advertising, analytics, and rankings.
+            (com.google.android.gms.permission.AD_ID) for advertising, analytics, rankings, and cloud save.
             The game itself remains playable offline, but ads will not be shown.
           </p>
 
@@ -510,7 +540,7 @@
           <ul>
             <li>
               <strong>Game data</strong> — stored on your device and deleted when you uninstall
-              the game. Apart from the ranking record below, we do not retain game data.
+              the game. Apart from the ranking records and cloud save below, we do not retain game data.
             </li>
             <li>
               <strong>Leaderboard scores</strong> — retained by Google Play Games Services
@@ -522,6 +552,15 @@
               (Google LLC) until you delete them or until the service ends. Records that have not
               been updated for a long time may be removed. Your ranking record remains even if you
               uninstall the game or use <em>Reset Data</em>; to delete it, follow Section 12.5.
+              MAZEHOLD ranking records are <strong>deleted immediately</strong> when you delete your account (Section 12.6).
+            </li>
+            <li>
+              <strong>Cloud save (MAZEHOLD)</strong> — retained by us in Cloud Firestore (Google LLC)
+              and <strong>deleted immediately</strong> when you delete your account (Section 12.6).
+            </li>
+            <li>
+              <strong>Weekly raid ranking records (MAZEHOLD)</strong> — kept after the weekly
+              settlement and deleted together with your account (Section 12.6).
             </li>
             <li>
               <strong>Enquiry emails</strong> — kept for up to one year after the enquiry is
@@ -550,8 +589,9 @@
             privacy policy.
           </p>
           <p>
-            In-game ranking records are stored in Cloud Firestore's <strong>Seoul, Republic of
-            Korea region</strong>. However, Firebase Authentication, which verifies sign-in for the
+            Sortini's in-game ranking records are stored in Cloud Firestore's <strong>Seoul, Republic of
+            Korea region</strong>. MAZEHOLD's ranking records and cloud save are stored in Cloud Firestore
+            (Google LLC) and may be processed on servers outside your country under Google's infrastructure. However, Firebase Authentication, which verifies sign-in for the
             ranking, runs on Google's global infrastructure, so authentication information such as
             your Firebase user ID may be processed on servers outside your country.
           </p>
@@ -567,7 +607,7 @@
           <p>We take the following measures to keep information safe:</p>
           <ul>
             <li>Collecting the minimum information necessary to provide the Service</li>
-            <li>Processing game data on the device, and sending only the minimum fields needed to show ranks to the in-game ranking</li>
+            <li>Processing game data on the device, sending only the minimum fields needed to show ranks to the in-game ranking, and only the data needed to restore progress to cloud save</li>
             <li>Serving the entire website over HTTPS</li>
             <li>Restricting access to the enquiry mailbox</li>
           </ul>
@@ -626,6 +666,8 @@
           <p>
             The steps above apply to Play Games data managed by Google. Ranking records for the
             in-game ranking we operate are kept separately; to delete them, follow Section 12.5.
+            To also remove your MAZEHOLD game server account and cloud save, use
+            <em>Option → Delete Account</em> in the game (Section 12.6).
           </p>
 
           <h3 id="ranking-delete">12.5 Deleting your in-game ranking record</h3>
@@ -652,6 +694,33 @@
               act on it without undue delay once confirmed.
             </li>
           </ul>
+
+          <h3 id="account-delete">12.6 Deleting your account</h3>
+          <p>
+            In MAZEHOLD you can delete your game server account and the data stored on our servers as follows:
+          </p>
+          <ul>
+            <li>
+              <strong>Delete in the game</strong> — tap <em>Option → Delete Account</em> in the lobby.
+              Your game server account (Firebase Authentication), cloud save, and stage/raid ranking
+              records are <strong>deleted immediately</strong>. This cannot be undone; game progress
+              stored on your device stays (clear it with <em>Reset data</em> or by uninstalling).
+            </li>
+            <li>
+              <strong>Request by email</strong> — if you have uninstalled the game or cannot open it,
+              email <a href="mailto:contact@doubleupstudio.com">contact@doubleupstudio.com</a> with your
+              Play Games display name (the name shown in the game's rankings). We delete your data
+              <strong>within 30 days</strong> after verifying the request and reply to you.
+            </li>
+            <li>
+              <strong>Difference from Delete Ranking Record</strong> — <em>Delete Ranking Record</em>
+              (Section 12.5) removes only your ranking records and keeps your account and cloud save.
+              <em>Delete Account</em> removes your account, cloud save, and ranking records.
+            </li>
+          </ul>
+          <p>
+            Full guide: <a href="/games/mazehold/delete-account/en/">MAZEHOLD account &amp; data deletion</a>
+          </p>
 
           <!-- ================= S13. Changes ================= -->
           <h2 id="s13">13. Changes to This Policy</h2>
@@ -689,6 +758,11 @@
                 </tr>
               </thead>
               <tbody>
+                <tr>
+                  <td>1.5</td>
+                  <td>2026-11-12</td>
+                  <td>Revised for MAZEHOLD's cloud save, weekly raid ranking and account deletion — added disclosure of cloud save (game progress data) and weekly raid ranking (display name, score), immediate deletion when the account is deleted, and the in-game account deletion and email request (within 30 days) [Summary / S2.2 / S3 / S4 / S7 / S8 / S9 / S10 / S11 / S12.4 / S12.6]</td>
+                </tr>
                 <tr>
                   <td>1.4</td>
                   <td>2026-10-27</td>
