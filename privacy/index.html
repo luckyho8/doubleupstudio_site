@@ -40,7 +40,7 @@
     meta description · 개정 안내(제12.6항 한 줄) · 요약 · [S2.2] 예외 ②에 (Sortini) 표시 + 예외 ③ 신설(MAZEHOLD
     클라우드 저장 · 스테이지/레이드 랭킹) · [S3] 이용 목적 · [S4] Firestore 행(클라우드 저장 · 레이드 주간 랭킹) +
     설명 문단 · [S7] 클라우드 백업 한 줄 · [S8] 인터넷 권한 용도 · [S9] 계정 삭제 때 즉시 삭제 · 레이드 주간 기록 ·
-    [S10] MAZEHOLD 저장 위치(서울로 단정하지 않음 — 리전 확인되면 고칠 것) · [S11] · [S12.4] 계정 삭제 안내 ·
+    [S10] 저장 위치에 클라우드 저장 추가(MAZEHOLD Firestore도 asia-northeast3 서울, 11-12 사용자 확인) · [S11] · [S12.4] 계정 삭제 안내 ·
     [S12.6] 신설(계정 삭제, 안내 쪽 /games/mazehold/delete-account/ 링크).
   v1.4에서 고친 곳: meta description · 요약문("기기 안에만 저장 / 리더보드 점수만 Google에 저장"
     문구 수정) · [S2.1] Play 게임즈 로그인 시 Firebase 인증 연결 · [S2.2] "기기에만 저장" 문구를
@@ -253,8 +253,8 @@
           </p>
           <p>
             <strong>예외 ③ 클라우드 저장 · 게임 내 랭킹(MAZEHOLD)</strong> — MAZEHOLD에서 Google Play
-            게임즈에 로그인한 경우, 다음 정보가 Firebase 사용자 ID로 구분되어 <strong>Cloud Firestore</strong>(Google LLC)에
-            저장됩니다.
+            게임즈에 로그인한 경우, 다음 정보가 Firebase 사용자 ID로 구분되어 <strong>Cloud Firestore</strong>(Google LLC,
+            데이터 저장 위치: 대한민국 서울)에 저장됩니다.
           </p>
           <ul>
             <li><strong>클라우드 저장</strong> — 게임 진행 데이터(재화 · 보유 타워 · 기록). 기기를 바꿀 때 진행을 이어 가기 위한 백업이며, 로그인한 경우에만 저장됩니다.</li>
@@ -564,9 +564,7 @@
             개인정보처리방침을 따릅니다.
           </p>
           <p>
-            Sortini의 게임 내 랭킹 기록은 Cloud Firestore의 <strong>대한민국 서울 리전</strong>에 저장됩니다.
-            MAZEHOLD의 랭킹 기록과 클라우드 저장은 Cloud Firestore(Google LLC)에 저장되며, Google의
-            인프라에 따라 국외 서버에서 처리될 수 있습니다.
+            게임 내 랭킹 기록과 클라우드 저장(MAZEHOLD)은 Cloud Firestore의 <strong>대한민국 서울 리전</strong>에 저장됩니다.
             다만 랭킹 참여를 위한 로그인 확인에 쓰이는 Firebase Authentication은 Google의 전 세계
             인프라에서 운영되므로, 이 과정에서 Firebase 사용자 ID 등 인증 정보가 국외 서버에서
             처리될 수 있습니다.

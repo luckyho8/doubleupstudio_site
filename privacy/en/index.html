@@ -40,8 +40,8 @@
     marked (Sortini) + new Exception 3 (MAZEHOLD cloud save and stage/raid ranking), [S3] purposes,
     [S4] Firestore row (cloud save, weekly raid ranking) and paragraph, [S7] cloud backup sentence,
     [S8] internet permission purpose, [S9] immediate deletion on account deletion + weekly raid
-    records, [S10] MAZEHOLD storage location (not stated as Seoul - fix once the region is
-    confirmed), [S11], [S12.4] account deletion pointer, new [S12.6] (account deletion, links to
+    records, [S10] storage location now covers cloud save (MAZEHOLD Firestore is also
+    asia-northeast3 Seoul, confirmed 2026-11-12), [S11], [S12.4] account deletion pointer, new [S12.6] (account deletion, links to
     /games/mazehold/delete-account/en/). Keep in sync with the Korean memo.
   Updated in v1.4: meta description, summary (fixed "stored only on your device / only your
     leaderboard score is stored with Google"), [S2.1] Firebase sign-in linked to Play Games,
@@ -270,7 +270,7 @@
           <p>
             <strong>Exception 3: cloud save and in-game ranking (MAZEHOLD)</strong> — if you are signed
             in to Google Play Games in MAZEHOLD, the following information is stored in
-            <strong>Cloud Firestore</strong> (Google LLC), keyed by your Firebase user ID.
+            <strong>Cloud Firestore</strong> (Google LLC; data location: Seoul, Republic of Korea), keyed by your Firebase user ID.
           </p>
           <ul>
             <li><strong>Cloud save</strong> — game progress data (currency, owned towers, records). It is a backup that lets you continue on a new phone, and it is stored only when you are signed in.</li>
@@ -589,9 +589,8 @@
             privacy policy.
           </p>
           <p>
-            Sortini's in-game ranking records are stored in Cloud Firestore's <strong>Seoul, Republic of
-            Korea region</strong>. MAZEHOLD's ranking records and cloud save are stored in Cloud Firestore
-            (Google LLC) and may be processed on servers outside your country under Google's infrastructure. However, Firebase Authentication, which verifies sign-in for the
+            In-game ranking records and cloud save (MAZEHOLD) are stored in Cloud Firestore's <strong>Seoul, Republic of
+            Korea region</strong>. However, Firebase Authentication, which verifies sign-in for the
             ranking, runs on Google's global infrastructure, so authentication information such as
             your Firebase user ID may be processed on servers outside your country.
           </p>
