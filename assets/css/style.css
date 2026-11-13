@@ -509,6 +509,8 @@ main { flex: 1 0 auto; }
 @media (min-width: 620px) { .shots.shots--landscape { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1000px) { .shots.shots--landscape { grid-template-columns: repeat(3, 1fr); } }
 .shots.shots--landscape img { aspect-ratio: 16 / 9; }
+/* store screenshot set (1080x1920 -> 540x960), e.g. Sortini 1.3+ */
+.shots.shots--store img { aspect-ratio: 9 / 16; }
 /* KO | EN switch — links to the other language URL (no JS swap) */
 .lang-switch { display: inline-flex; border: 2px solid var(--line); }
 .lang-switch a, .lang-switch span {
