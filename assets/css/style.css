@@ -574,6 +574,115 @@ main { flex: 1 0 auto; }
 .changelog ul { margin: 0; padding-left: 1.2rem; color: var(--ink-mid); }
 .changelog ul li { border: 0; background: none; padding: 0; margin: 0 0 .25rem; }
 
+/* 10c. MAZEHOLD game guide ------------------------------------------------- */
+/* on-page jump links under the hero; scrolls sideways on phones */
+.section[id] { scroll-margin-top: 76px; }
+.guide-nav { border-block: 2px solid var(--line-soft); background: var(--bg-panel); }
+.guide-nav__inner {
+  display: flex;
+  gap: .35rem;
+  overflow-x: auto;
+  padding-block: .6rem;
+  scrollbar-width: thin;
+}
+.guide-nav a {
+  flex: none;
+  font-family: var(--font-pixel);
+  font-weight: 700;
+  font-size: .85rem;
+  color: var(--ink-mid);
+  text-decoration: none;
+  padding: .45rem .7rem;
+  border: 2px solid transparent;
+}
+.guide-nav a:hover, .guide-nav a:focus-visible { color: var(--sky); border-color: var(--sky-deep); }
+.guide-sub { margin: 2.25rem 0 1rem; }
+.guide-lead { color: var(--ink-mid); max-width: 70ch; margin: -1rem 0 1.5rem; }
+
+/* how to play: numbered steps */
+.guide-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--gap); counter-reset: step; }
+@media (min-width: 760px) { .guide-steps { grid-template-columns: repeat(2, 1fr); } }
+.guide-steps li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: .2rem .9rem;
+  border: 2px solid var(--line);
+  background: var(--bg-panel);
+  padding: 1rem 1.15rem;
+}
+.guide-steps li::before {
+  content: counter(step);
+  grid-row: span 2;
+  font-family: var(--font-arcade);
+  font-size: .9rem;
+  color: var(--amber);
+  line-height: 1.6;
+}
+.guide-steps b { font-family: var(--font-pixel); color: var(--ink); }
+.guide-steps span { color: var(--ink-mid); font-size: .95rem; }
+
+/* stages */
+.stage-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--gap); }
+@media (min-width: 760px) { .stage-list { grid-template-columns: repeat(3, 1fr); } }
+.stage-card { border: 2px solid var(--line); background: var(--bg-panel); }
+.stage-card img { width: 100%; height: auto; aspect-ratio: 12 / 5; object-fit: cover; display: block; border-bottom: 2px solid var(--line); }
+.stage-card__body { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .75rem; padding: .85rem 1rem; }
+.stage-card__no { font-family: var(--font-arcade); font-size: .6rem; color: var(--sky); letter-spacing: .08em; }
+.stage-card__name { font-family: var(--font-pixel); color: var(--ink); font-size: 1.05rem; }
+.stage-card__waves { margin-left: auto; color: var(--ink-dim); font-size: .85rem; }
+
+/* towers & gates: grouped by grade */
+.unit-group {
+  display: flex;
+  align-items: baseline;
+  gap: .6rem;
+  margin: 2rem 0 .9rem;
+  font-size: 1.05rem;
+  color: var(--gc, var(--ink));
+}
+.unit-group:first-of-type { margin-top: 0; }
+.unit-group span { font-size: .8rem; color: var(--ink-dim); font-weight: 400; }
+.unit-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 620px) { .unit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .unit-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.unit-card {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: .85rem;
+  align-items: start;
+  border: 2px solid var(--line);
+  border-left: 4px solid var(--gc, var(--line));
+  background: var(--bg-panel);
+  padding: .75rem .85rem;
+}
+.unit-card img { width: 64px; height: 64px; }
+.unit-card img.pixel { image-rendering: pixelated; }
+.unit-card__body { min-width: 0; display: grid; gap: .15rem; }
+.unit-card__name { font-family: var(--font-pixel); color: var(--ink); }
+.unit-card__role { font-size: .82rem; color: var(--gc, var(--ink-dim)); }
+.unit-card__desc { margin: .2rem 0 0; font-size: .88rem; color: var(--ink-mid); line-height: 1.55; }
+.unit-card__note { margin: .3rem 0 0; font-size: .8rem; color: var(--amber); }
+.unit-group--basic, .unit-card--basic { --gc: #a8b2c8; }
+.unit-group--rare, .unit-card--rare { --gc: var(--sky); }
+.unit-group--superRare, .unit-card--superRare { --gc: #c79bff; }
+.unit-group--hero, .unit-card--hero { --gc: var(--amber); }
+.unit-group--god, .unit-card--god { --gc: var(--lime); }
+
+/* modes & link cards */
+.mode-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--gap); }
+@media (min-width: 760px) { .mode-grid { grid-template-columns: repeat(2, 1fr); } }
+.mode-card h3 { margin: 0 0 .5rem; color: var(--amber); }
+.mode-card p { margin: 0; color: var(--ink-mid); }
+.link-grid { display: grid; gap: var(--gap); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 620px) { .link-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .link-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.link-card { display: grid; gap: .3rem; text-decoration: none; color: var(--ink-mid); transition: transform .14s ease, border-color .14s ease; }
+.link-card b { font-family: var(--font-pixel); color: var(--sky); }
+.link-card:hover { transform: translateY(-2px); border-color: var(--sky-deep); color: var(--ink-mid); }
+.link-card--wide { max-width: 720px; }
+.site-footer__note { margin: .75rem 0 0; font-size: .78rem; color: var(--ink-dim); }
+
 /* 11. About --------------------------------------------------------------- */
 .stat-row { display: grid; gap: var(--gap); }
 @media (min-width: 620px) { .stat-row { grid-template-columns: repeat(3, 1fr); } }

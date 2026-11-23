@@ -22,12 +22,12 @@
   </url>
   <url>
     <loc>https://doubleupstudio.com/games/mazehold/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://doubleupstudio.com/games/mazehold/en/</loc>
-    <lastmod>2026-11-12</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -57,8 +57,13 @@
   </url>
   <url>
     <loc>https://doubleupstudio.com/contact/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://doubleupstudio.com/contact/en/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://doubleupstudio.com/privacy/</loc>
