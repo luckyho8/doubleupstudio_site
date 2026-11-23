@@ -80,6 +80,8 @@
     3) JSON-LD: downloadUrl 추가, datePublished(출시일) · softwareVersion 추가
     4) .release-date 줄, "개발 소식" → "업데이트", 아래 판 "곧 만나요" 문구
     5) 홈 · Games 카드 꼬리표와 출시 표기
+    → 1~5 전부 tools/mazehold_release.py 가 한다. 게시하는 날(스토어 주소가 열린 뒤에만): --check 로 확인 → --apply YYYY-MM-DD
+      (버전 1.0.0, 업데이트 첫 판 = 1.0.0 출시 인사. 내부 테스트 빌드는 싣지 않음)
 -->
 
 <body>
@@ -144,7 +146,7 @@
     <!-- ============================== on-page nav ============================== -->
     <nav class="guide-nav" aria-label="이 페이지 바로가기">
       <div class="wrap guide-nav__inner">
-          <a href="#about">소개</a>
+          <a href="#about">게임 가이드</a>
           <a href="#how">게임 방법</a>
           <a href="#stages">스테이지</a>
           <a href="#towers">타워</a>
@@ -160,11 +162,11 @@
     <section class="section" id="about">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow">About</p>
-          <h2>몬스터가 지나갈 길을 직접 설계하세요</h2>
+          <p class="eyebrow">Game Guide</p>
+          <h2>게임 가이드</h2>
         </div>
         <div class="doc">
-          <p>타워를 놓을수록 미로는 길어지고, 몬스터는 더 오래 공격받습니다. 대문은 하나 — 100 웨이브 동안 지켜 내세요.</p>
+          <p><strong>몬스터가 지나갈 길을 직접 설계하세요.</strong> 타워를 놓을수록 미로는 길어지고, 몬스터는 더 오래 공격받습니다. 대문은 하나 — 100 웨이브 동안 지켜 내세요.</p>
         </div>
         <ul class="feature-list" style="margin-top:1.5rem">
           <li><strong>미로를 짓는 타워 디펜스</strong>대포 · 레이저 · 화염 · 망치 · 자석 · 사신… 타워가 곧 벽이 됩니다. 분열 · 은신 · 회복 · 순간이동하는 몬스터와 보스가 몰려와요.</li>
