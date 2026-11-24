@@ -484,6 +484,7 @@ main { flex: 1 0 auto; }
   .game-hero__video { justify-self: end; width: 100%; }
   .video-embed--shorts { max-width: 320px; margin-inline: 0; }
 }
+.video-embed--trailer { max-width: 960px; margin-bottom: .5rem; }
 .shots { display: grid; gap: var(--gap); grid-template-columns: repeat(2, 1fr); }
 @media (min-width: 620px) { .shots { grid-template-columns: repeat(3, 1fr); } }
 @media (min-width: 860px) { .shots { grid-template-columns: repeat(4, 1fr); } }

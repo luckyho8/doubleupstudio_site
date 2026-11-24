@@ -7,7 +7,7 @@ the store URL returns 404 until then, so the badge would be a broken link.
   python -I -X utf8 tools/mazehold_release.py --apply 2026-12-01  # launch day (the publish date)
 
 What it changes (KO + EN unless noted):
-  * tag "개발 중 · 비공개 테스트" -> "서비스 중" (lime)
+  * tag "개발 중 · 비공개 테스트" -> "서비스 중" / "Available now" (lime)
   * both "Google Play · 출시 준비 중" chips -> official Google Play badge link
   * release line -> "v1.0.0 · RELEASED YYYY.MM.DD"
   * meta / og descriptions: drop "in development"
@@ -24,16 +24,18 @@ import re
 import sys
 
 SITE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PLAY = 'https://play.google.com/store/apps/details?id=com.doubleupstudio.mazehold'
+PLAY = 'https://play.google.com/store/apps/details?id=com.doubleupstudio.mazehold'  # JSON-LD downloadUrl
+# store badges: same URL + install referrer (utm) so site installs show up in Play Console
+BADGE_URL = PLAY + '&amp;referrer=utm_source%3Dsite%26utm_medium%3Dbadge%26utm_campaign%3Dopen'
 VERSION = '1.0.0'
 
 
 def badge(lang):
     if lang == 'ko':
-        return (f'<a class="store-badge" href="{PLAY}"\n               target="_blank" rel="noopener">\n'
+        return (f'<a class="store-badge" href="{BADGE_URL}"\n               target="_blank" rel="noopener">\n'
                 '              <img src="/assets/img/badges/google-play-ko.png" alt="Google Play에서 다운로드" width="145" height="56" />\n'
                 '            </a>')
-    return (f'<a class="store-badge" href="{PLAY}"\n               target="_blank" rel="noopener">\n'
+    return (f'<a class="store-badge" href="{BADGE_URL}"\n               target="_blank" rel="noopener">\n'
             '              <img src="/assets/img/badges/google-play-en.png" alt="Get it on Google Play" width="145" height="56" />\n'
             '            </a>')
 
@@ -106,7 +108,7 @@ def edits(date):
           <h2>지금 무료로 플레이하세요</h2>''', 1),
         ],
         'games/mazehold/en/index.html': [
-            ('<span class="tag tag--amber">In development · Closed testing</span>', '<span class="tag tag--lime">Live</span>', 1),
+            ('<span class="tag tag--amber">In development · Closed testing</span>', '<span class="tag tag--lime">Available now</span>', 1),
             ('<span class="store-soon" aria-label="Google Play version coming soon">Google Play · Coming soon</span>', badge('en'), 2),
             ('<p class="release-date">IN DEVELOPMENT · CLOSED TESTING</p>', f'<p class="release-date">v{VERSION} · RELEASED {dot}</p>', 1),
             ('How to play, towers and gates. In development (closed testing).', 'How to play, towers and gates. Free on Google Play.', 1),
