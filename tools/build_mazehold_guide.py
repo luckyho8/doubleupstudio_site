@@ -7,13 +7,14 @@ Reads the game repository (read-only) and regenerates the data-driven parts of
   * 41 tower cards  -> <!-- BEGIN guide:towers -->  ... <!-- END guide:towers -->
   * 16 gate cards   -> <!-- BEGIN guide:gates -->   ... <!-- END guide:gates -->
   * store screenshots -> <!-- BEGIN guide:shots --> ... <!-- END guide:shots -->
+  * raid score rule  -> <!-- BEGIN guide:raidrule --> ... <!-- END guide:raidrule -->  (Localization ui.raidRule)
 
 Only the text between those markers is replaced; hand-written copy elsewhere
 on the page is left alone. Images are written to assets/img/games/mazehold/.
 
 Sources (game repo, all under MazeholdUnity/Assets/_Game unless noted):
   Data/Json/towers.json, gates.json, gate_visuals.json, stages.json, waves.json
-  Localization/ko.json, en.json        (names, roles, specials, passives)
+  Localization/ko.json, en.json        (names, roles, specials, passives, ui.raidRule)
   Art/TowerCards/card_<key>.png        (tower art)
   Art/Gates/gate_{fill,detail,border,mark}_<key>.png  (gate art, tinted like GateArt.cs)
   Art/Illust/stage_card_0N.png         (stage art)
@@ -250,6 +251,7 @@ def main():
         text = replace_block(text, 'towers', towers_html(lang, loc, towers, W))
         text = replace_block(text, 'gates', gates_html(lang, loc, gates, W))
         text = replace_block(text, 'shots', shots_html(lang, a.game, W))
+        text = replace_block(text, 'raidrule', '            <p>%s</p>' % esc(loc['ui.raidRule']))
         with open(path, 'w', encoding='utf-8', newline='\n') as f:
             f.write(text)
         print(f'{page}: stages {len(stages.get("stageNames", {}))}, towers {len(towers)}, gates {len(gates)}')
