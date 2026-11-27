@@ -45,7 +45,7 @@
   "operatingSystem": "Android",
   "image": "https://doubleupstudio.com/assets/img/games/mazehold-og.jpg",
   "url": "https://doubleupstudio.com/games/mazehold/en/",
-  "softwareVersion": "1.0.1",
+  "softwareVersion": "1.1.0",
   "datePublished": "2026-11-24",
   "downloadUrl": "https://play.google.com/store/apps/details?id=com.doubleupstudio.mazehold",
   "offers": {
@@ -109,7 +109,7 @@
               <img src="/assets/img/badges/google-play-en.png" alt="Get it on Google Play" width="145" height="56" />
             </a>
           </div>
-          <p class="release-date">v1.0.1 · UPDATED 2026.11.25 · RELEASED 2026.11.24</p>
+          <p class="release-date">v1.1.0 · UPDATED 2026.11.27 · RELEASED 2026.11.24</p>
           <p class="game-links">
             <span class="game-links__notice">Includes random items (paid)</span>
             <a href="/games/mazehold/probability/en/">Probability</a>
@@ -342,8 +342,8 @@
             <img src="/assets/img/games/mazehold/towers/flamethrower.webp" alt="" width="80" height="80" loading="lazy" />
             <div class="unit-card__body">
               <b class="unit-card__name">Flamethrower Tower</b>
-              <span class="unit-card__role">Short-range area sustained fire</span>
-              <p class="unit-card__desc">Attacks multiple monsters within range at once</p>
+              <span class="unit-card__role">Short-range cone sustained fire</span>
+              <p class="unit-card__desc">Burns up to 5 monsters in the 60° cone in front at once (up to 8 when upgraded)</p>
             </div>
           </li>
           <li class="unit-card unit-card--rare">
@@ -351,7 +351,7 @@
             <div class="unit-card__body">
               <b class="unit-card__name">Thundercloud Tower</b>
               <span class="unit-card__role">Multi-target attack</span>
-              <p class="unit-card__desc">Chains lightning through up to 5 monsters near the tower</p>
+              <p class="unit-card__desc">Lightning jumps to up to 5 monsters, losing 20% damage per jump</p>
             </div>
           </li>
           <li class="unit-card unit-card--rare">
@@ -383,7 +383,7 @@
             <div class="unit-card__body">
               <b class="unit-card__name">Gear Saw Tower</b>
               <span class="unit-card__role">Short-range ultra-fast area sustained fire</span>
-              <p class="unit-card__desc">Spinning blades damage all monsters within range every 0.8 sec</p>
+              <p class="unit-card__desc">Spinning blades cut up to 5 monsters in range every 0.8 sec (up to 8 when upgraded)</p>
             </div>
           </li>
           <li class="unit-card unit-card--rare">
@@ -423,7 +423,7 @@
             <div class="unit-card__body">
               <b class="unit-card__name">Stun Tower</b>
               <span class="unit-card__role">Short-range crowd control</span>
-              <p class="unit-card__desc">Each attack has a 25% chance to stun all monsters within range in place for 2 sec</p>
+              <p class="unit-card__desc">Each attack has a 25% chance to stun up to 8 monsters in range for 2 sec</p>
             </div>
           </li>
           <li class="unit-card unit-card--rare">
@@ -797,7 +797,37 @@
           <p class="eyebrow">Updates</p>
           <h2>Updates</h2>
         </div>
+        <div class="note note--sky">
+          <p style="margin:0 0 .5rem"><strong>About the 1.1.0 update (2026.11.27)</strong> — Some towers you already own work differently now: Flamethrower, Gear Saw, Stun and Thundercloud. Returning players get 145 rubies (in-game notice).</p>
+          <ul style="margin:0">
+            <li><b>Flamethrower Tower</b> — Burns only the 60° cone in front instead of everything in range. Hits up to 5 at once (8 at Ruby Lv10), damage 7 → 11</li>
+            <li><b>Gear Saw Tower</b> — Hits up to 5 at once (8 at Ruby Lv10), damage 3 → 4</li>
+            <li><b>Stun Tower</b> — Holds up to 8 at once</li>
+            <li><b>Thundercloud Tower</b> — Deals 20% less with each jump (100 · 80 · 60 · 40 · 20%)</li>
+            <li><b>Duplicate boosts</b> — Damage stays the same; range goes up +0.1 tile per 5 copies (max +1). It used to be +0.1 per copy</li>
+            <li><b>Tower Shop</b> — Up to 30 per tower. Copies 1–10 at the grade price (Basic 20 · Rare 50 ruby), 11–20 at 2x, 21–30 at 4x, then Gacha only</li>
+            <li><b>New: Free x10 on the Gacha</b> — Each ad fills one slot (5 a day); when all 10 are filled, you get a free x10 draw. No Divine towers and it doesn't count toward pity. Odds on the <a href="/games/mazehold/probability/en/">probability page</a></li>
+            <li><b>Boost: ▶ FX</b> — Preview the boost effect for Flamethrower, Gear Saw, Thundercloud and Stun</li>
+            <li>Ruby gacha odds, the 10-draw guarantee and pity are unchanged</li>
+          </ul>
+        </div>
         <ul class="changelog">
+          <li>
+            <div class="changelog__head">
+              <span class="changelog__ver">1.1.0 Update</span>
+              <span class="changelog__date">2026.11.27</span>
+            </div>
+            <ul>
+              <li>Flamethrower now burns only the 60° cone in front, with damage 7 → 11</li>
+              <li>Flamethrower and Gear Saw hit up to 5 targets (8 when boosted); Stun holds up to 8</li>
+              <li>Lightning Cloud deals 20% less with each jump</li>
+              <li>Duplicate boosts raise range by +0.1 per 5 copies (max +1)</li>
+              <li>Boost: ▶ FX previews the upgrade effect</li>
+              <li>Tower Shop: up to 30 per tower; price rises from #11 and #21</li>
+              <li>New: Free x10 on the Gacha, filled by watching ads (up to 5 a day)</li>
+              <li>Returning players get 145 rubies for the changes</li>
+            </ul>
+          </li>
           <li>
             <div class="changelog__head">
               <span class="changelog__ver">1.0.1 Update</span>
